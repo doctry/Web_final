@@ -13,3 +13,9 @@ This is the final project of web programming 109-1
 
 1. Dead: 請客
 2. Not work: 請飲料
+
+## Deadline 12/17
+
+吳：
+楊：
+趙：
