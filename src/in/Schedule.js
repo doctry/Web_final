@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Calender from "./components/schedule/Calender"
+import Todolist from "./components/schedule/Todolist"
 
 // TODO:
 // Render a schedule container

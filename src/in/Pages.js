@@ -1,9 +1,14 @@
+import Main from "./Main"
 import Home from "./Home"
 import Schedule from "./Schedule"
 import Contact from "./Contact"
 
+const Main_page = () => {
+    return <Main/>;
+}
+
 const Home_page = () => {
-    return <Home/>;
+    return <Home/>
 }
 
 const Schedule_page = () => {
@@ -14,4 +19,4 @@ const Contact_page = () => {
     return <Contact/>
 }
 
-export { Home_page, Schedule_page, Contact_page };
+export { Main_page, Home_page, Schedule_page, Contact_page };

@@ -3,14 +3,14 @@ import React from "react"
 import { BrowserRouter } from 'react-router-dom'
 import { Route, Switch } from "react-router-dom";
 
-import { Home_page } from "./in/Pages"
+import { Main_page } from "./in/pages"
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Switch> 
-          <Route exact path="/" component={ Home_page }/>
+          <Route exact path="/" component={ Main_page }/>
         </Switch>
       </BrowserRouter>
     </div>
