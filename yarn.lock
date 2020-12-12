@@ -1161,6 +1161,38 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fullcalendar/common@~5.4.0":
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/common/-/common-5.4.0.tgz#65474163e43bea4443b2577cd39d7021678237df"
+  integrity sha512-w6C5VLxZmS8AmbAIiIHy+p+S/G9wtsvFEgyM/Ijd+5/ENKV4bs8ieOsetdl79WUheRKg0oXiiG5fy1X3EFk/Gg==
+  dependencies:
+    tslib "^2.0.3"
+
+"@fullcalendar/core@^5.4.0":
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/core/-/core-5.4.0.tgz#426eed400b0948b955e92275095d617e428be5a1"
+  integrity sha512-brg5TI/ZrCm+gBdKRkDLuenUxAEYa40Esw6yAtLbx0azRinhOZ+koqy4J3VA3dnv2W5HI9agVr9wuQLHWjqDtw==
+  dependencies:
+    "@fullcalendar/common" "~5.4.0"
+    preact "^10.0.5"
+    tslib "^2.0.3"
+
+"@fullcalendar/daygrid@^5.4.0":
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/daygrid/-/daygrid-5.4.0.tgz#9e29089f58166cbfea980da1a69b55e157794ed6"
+  integrity sha512-UgBcEWNMFuhnwQNH0NP1qWo3swH3jAqXY7Y43eQakwwFbCuP/gBSmiOgkVnfK2SmPJTDMEnFR5jApcXPlpPXlQ==
+  dependencies:
+    "@fullcalendar/common" "~5.4.0"
+    tslib "^2.0.3"
+
+"@fullcalendar/react@^5.4.0":
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/react/-/react-5.4.0.tgz#874fa7a72b92aec1d907e253f1d59b48ef1b9759"
+  integrity sha512-FtTuD40jdbSzttKmC6PHLnoJSNrw48oq/zbjZ2Qm/94YPEuGULJ0YMjftGTg6pGxBhJf7LiC1bU5eM92iwIYZA==
+  dependencies:
+    "@fullcalendar/common" "~5.4.0"
+    tslib "^2.0.3"
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
@@ -8720,6 +8752,11 @@ postcss@^8.1.0:
     colorette "^1.2.1"
     nanoid "^3.1.20"
     source-map "^0.6.1"
+
+preact@^10.0.5:
+  version "10.5.7"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.5.7.tgz#f1d84725539e18f7ccbea937cf3db5895661dbd3"
+  integrity sha512-4oEpz75t/0UNcwmcsjk+BIcDdk68oao+7kxcpc1hQPNs2Oo3ZL9xFz8UBf350mxk/VEdD41L5b4l2dE3Ug3RYg==
 
 prelude-ls@^1.2.1:
   version "1.2.1"

@@ -1,19 +1,14 @@
-import React, { Component } from 'react';
-import Calender from "./components/schedule/Calender"
-import Todolist from "./components/schedule/Todolist"
+import Calender from "./components/schedule/Calender";
+import Todolist from "./components/schedule/Todolist";
+import React, { useState } from "react";
 
-// TODO:
-// Render a schedule container
-// 1. Note that header and footer are in the component folder
-
-class Schedule extends Component {
-    render () {
-        return (
-        <>
-            <div> this is calender </div>
-        </>
-        );
-    }
+function Schedule() {
+  return (
+    <>
+      <Calender />
+      <Todolist />
+    </>
+  );
 }
 
 export default Schedule;
