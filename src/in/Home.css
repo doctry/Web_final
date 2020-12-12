@@ -1,0 +1,16 @@
+.home-header {
+    position: relative;
+    background-color: #2056ac;
+    color: azure;
+    height: 10vh;
+    font-size: 50px;
+    font-family: cursive;
+    padding: 30px;
+}
+
+.home-button {
+    position: absolute;
+    height: 40px;
+    width: 50px;
+    right: 20px;
+}
