@@ -3,9 +3,9 @@ This is the final project of web programming 109-1
 
 ## Deadline 12/17
 
-吳：  
-楊：  
-趙： 
+吳：Contact.js, css design
+楊：Schedule.js (including its components)
+趙：./components/home/*, CreateTask.js
 
 ## Log
 ### 1212 Jian-Han0504
