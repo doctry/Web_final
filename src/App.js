@@ -3,7 +3,7 @@ import React from "react"
 import { BrowserRouter } from 'react-router-dom'
 import { Route, Switch } from "react-router-dom";
 
-import { Main_page } from "./in/pages"
+import { Main_page } from "./in/Pages"
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom'
 import { Route, Switch } from "react-router-dom";
-import { Home_page, Schedule_page, Contact_page } from "./pages"
+import { Home_page, Schedule_page, Contact_page } from "./Pages"
 
 import Navbar_in from "./components/Navbar_in"
 
