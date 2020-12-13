@@ -1,19 +1,18 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import interactionPlugin from "@fullcalendar/interaction";
+import events from "./events"
 import "./Schedule.css";
 
-function Calendar() {
+function Calendar(props) {
   return (
     <div className="calendar">
       <FullCalendar
-        plugins={[dayGridPlugin]}
+        plugins={[ dayGridPlugin, interactionPlugin ]}
         initialView="dayGridMonth"
-        events={[
-          { title: "event 1", date: "2020-12-20" },
-          { title: "event 2", date: "2020-12-21" },
-          { title: "event 3", date: "2020-12-21" },
-        ]}
+        events={events}
+        dateClick={() => {props.onDateClick()}}
       />
     </div>
   );
