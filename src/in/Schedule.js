@@ -1,6 +1,7 @@
 import Calendar from "./components/schedule/Calendar";
 import Todolist from "./components/schedule/Todolist";
 import InputTask from "./components/schedule/InputTask";
+import CreateTask from "./CreateTask";
 import React, { useState } from "react";
 import "./components/schedule/Schedule.css";
 
@@ -14,7 +15,9 @@ function Schedule() {
   return (
     <>
       <Calendar onDateClick={handleDateClick} />
-      {inputTask? <InputTask /> : <Todolist />}
+      {//   the place I // is which you wrote yesterday, and below is my test
+      //inputTask? <InputTask /> : <Todolist />}
+      inputTask? <CreateTask /> : <Todolist />}
     </>
   );
 }
