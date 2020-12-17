@@ -1,5 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
 .home {
     height: 100vh;
     /* background-image: url("camp.JPG"); */
     /* background-size: contain; */
+}
+
+.place_Announce {
+    width: 78%;
+    float: left;
+    background-color: #FFF8DC;
+}
+
+.place_Weblink {
+    width: 22%;
+    float: right;
+    background-color: #d4f0f0;
+    height: 100%;
+}
+
+.Announce_ul {
+    list-style: none;
+    width: 100%;
+}
+
+.Announce_li {
+    width: 100%;
+    height: 60px;
+    border-top: 1px solid #666;
+}
+
+.Announce_h2 {
+    background: #333;
+    border-radius: 10px;
+    padding: 0 6px;
+    height: 30px;
+    font-size: 17px;
+    color: #fff;
+    line-height: 30px;
+    float: left;
+}
+
+.Announce_h3 {
+    float: right;
+    margin-right: 7px;
+    margin-bottom: 0;
+    color: #191970;
+}
+
+.Announce_a2 {
+    margin-left: 0.5rem !important;
+    font-size: 25px;
+    float: left;
+    padding-top: 10px;
+    overflow : hidden;
+    text-overflow : ellipsis;
+    color: #556B2F;
+
 }

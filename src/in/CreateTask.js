@@ -16,13 +16,13 @@ const Details = [
 	{
 		item_id:"create_title",
 		item:"Title",
-		inner_text:"title of task",
+		inner_text:"name of the task",
 		text:""
 	},
 	{
 		item_id:"create_deadline",
 		item:"Deadline",
-		inner_text:"deadline",
+		inner_text:"yyyy-mm-dd",
 		text:""
 	},
 	{
@@ -82,4 +82,4 @@ function CreateTask() {
 	);
 }
 
-export default CreateTask;
+export {CreateTask, Details};

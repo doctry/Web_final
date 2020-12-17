@@ -1,7 +1,7 @@
 import Calendar from "./components/schedule/Calendar";
 import Todolist from "./components/schedule/Todolist";
 import InputTask from "./components/schedule/InputTask";
-import CreateTask from "./CreateTask";
+import {CreateTask, Details} from "./CreateTask";
 import React, { useState } from "react";
 import "./components/schedule/Schedule.css";
 
