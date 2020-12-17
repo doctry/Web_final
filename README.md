@@ -29,6 +29,7 @@ This is the final project of web programming 109-1
 [Frontend_Template](https://templated.co/)
 [NavBar_Video](https://www.youtube.com/watch?v=CXa0f4-dWi4)
 [Cors problem solution](https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe)
+[Status 429](https://stackoverflow.com/questions/31704941/the-server-responded-with-a-status-of-429-too-many-requests-intltelinput-js)
 
 ## Penalty
 
