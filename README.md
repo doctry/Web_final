@@ -38,3 +38,6 @@ This is the final project of web programming 109-1
 
 ## Reference
 1. https://fullcalendar.io/docs/react
+2. The number of requests is limited to 200 per 60 minutes.  
+   https://github.com/Rob--W/cors-anywhere#demo-server
+
