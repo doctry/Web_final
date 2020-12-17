@@ -28,6 +28,7 @@ This is the final project of web programming 109-1
 [CSS_Reference](https://cssreference.io/)
 [Frontend_Template](https://templated.co/)
 [NavBar_Video](https://www.youtube.com/watch?v=CXa0f4-dWi4)
+[Cors problem solution](https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe)
 
 ## Penalty
 
