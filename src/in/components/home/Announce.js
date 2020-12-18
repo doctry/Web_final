@@ -27,9 +27,9 @@ function Announce() {
 		method: "GET"
 		}, function(error, response, body) {
 			if (error || !body) {
-				console.log("Pien~ QQ")
+				console.log("Pien~ QQ");
 			} else {
-				console.log("Yabi~ HA↑ HA↓ HA↑ HA↓")
+				console.log("Yabi~ HA↑ HA↓ HA↑ HA↓");
 				let store = [];
 				const $ = cheerio.load(body);
 				$(".col-md-12 ul .normal-item").each(function(i, elem) {
@@ -42,7 +42,7 @@ function Announce() {
 							"title": elem.children[3].children[1].children[0].data.substring(41, n - 36),
 							"color": {backgroundColor: "red"},
 							"date": elem.children[7].children[2].data.substring(37, nn - 32)
-						})
+						});
 					else
 						store.push({
 							"type": "置頂公告",
@@ -50,19 +50,19 @@ function Announce() {
 							"title": elem.children[3].children[1].children[0].data.substring(41, n - 36),
 							"color": {backgroundColor: "gray"},
 							"date": elem.children[7].children[2].data.substring(37, nn - 32)
-						})
+						});
 				})
-				setBoard(store)
-				setStop(true)
+				setBoard(store);
+				setStop(true);
 				console.log(store)
 			}
 		}
-	)}, 10000)
+	)}, 100);
 
 	if (stop) {
-		console.log("Hiiiiiii")
-		clearTimeout(interval)
-	}
+		console.log("stop getting");
+		clearTimeout(interval);
+	};
 
 	return (
 		<div className="place_Announce">

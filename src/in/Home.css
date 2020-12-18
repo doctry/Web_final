@@ -9,13 +9,13 @@
 }
 
 .place_Announce {
-    width: 78%;
+    width: 80%;
     float: left;
     background-color: #FFF8DC;
 }
 
 .place_Weblink {
-    width: 22%;
+    width: 20%;
     float: right;
     background-color: #d4f0f0;
     height: 100%;
@@ -45,7 +45,7 @@
 
 .Announce_h3 {
     float: right;
-    margin-right: 7px;
+    margin-right: 22px;
     margin-bottom: 0;
     color: #191970;
 }
@@ -58,5 +58,52 @@
     overflow : hidden;
     text-overflow : ellipsis;
     color: #556B2F;
+}
 
+.Weblink_ul {
+    width: 100%;
+}
+
+.Weblink_li {
+    width: 100%;
+    height: 50px;
+}
+
+.Weblink_a {
+    margin-left: 0.5rem !important;
+    font-size: 25px;
+    float: left;
+    padding-top: 0px;
+    overflow : hidden;
+    text-overflow : ellipsis;
+    color: #800000;
+}
+
+.Weblink-x {
+    display: none;
+}
+
+.Weblink_li:hover .Weblink-x {
+    display: inline;
+    position: absolute;
+    margin-top: 5px;
+    max-width: 20px;
+    max-height: 20px;
+    right: 20px;
+}
+
+.Weblink_li:hover .Weblink-x:hover {
+    margin-top: 5px;
+    max-width: 25px;
+    max-height: 25px;
+    right: 17.5px;
+}
+
+.Weblink_h2{
+    margin:auto;
+    width: 30%;
+    font-size: 20px;
+    background-color: rgb(135, 204, 181);
+    border-radius: 10px;
+    color: rgb(119, 73, 17);
 }
