@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import "./components/schedule/Schedule.css";
 
 function Schedule() {
-  const [inputTask,setInputTask] = useState(false);
+  const [inputTask, setInputTask] = useState(false);
 
   const handleDateClick = () => {
     setInputTask(true);

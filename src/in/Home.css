@@ -14,6 +14,23 @@
     background-color: #FFF8DC;
 }
 
+.Announce_button {
+    float: left;
+    margin-left: 10px;
+    margin-top: 13px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 10px;
+    color: white;
+    background-color: green;
+    cursor: pointer;
+}
+
+.Announce_button:first-child {
+    margin-left: 45px;
+    background-color: red;
+}
+
 .place_Weblink {
     width: 20%;
     float: right;
@@ -21,18 +38,18 @@
     height: 100%;
 }
 
-.Announce_ul {
+.WebPage_ul {
     list-style: none;
     width: 100%;
 }
 
-.Announce_li {
+.WebPage_li {
     width: 100%;
     height: 60px;
     border-top: 1px solid #666;
 }
 
-.Announce_h2 {
+.WebPage_h2 {
     background: #333;
     border-radius: 10px;
     padding: 0 6px;
@@ -43,14 +60,14 @@
     float: left;
 }
 
-.Announce_h3 {
+.WebPage_h3 {
     float: right;
     margin-right: 22px;
     margin-bottom: 0;
     color: #191970;
 }
 
-.Announce_a2 {
+.WebPage_a2 {
     margin-left: 0.5rem !important;
     font-size: 25px;
     float: left;
@@ -99,11 +116,22 @@
     right: 17.5px;
 }
 
-.Weblink_h2{
+.Weblink_h2 {
     margin:auto;
     width: 30%;
     font-size: 20px;
     background-color: rgb(135, 204, 181);
     border-radius: 10px;
     color: rgb(119, 73, 17);
+    cursor: pointer;
+}
+
+.Add_link_li {
+    float: left;
+    font-size: 15px;
+}
+
+.Add_link_button {
+    margin-top: 150px;
+    float: left;
 }

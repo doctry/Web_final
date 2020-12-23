@@ -10,7 +10,7 @@ function ShowLints(props) {
 					return (
 						<li key={index} className="Weblink_li">
 							<a href={item.href} target="_blank" className="Weblink_a">{item.title}</a>
-							<img src={X} alt="Delete" className="Weblink-x" onClick={() => {}} />
+							<img src={X} alt="Delete" className="Weblink-x" onClick={() => props.click_img(item.id)} />
 						</li>
 					)
 				})}
