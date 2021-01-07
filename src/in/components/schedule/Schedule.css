@@ -5,6 +5,8 @@
 }
 
 .right {
+    position: relative;
+    z-index: -1;
     width: 20vw;
     margin-right: 5vw;
     float: right;
