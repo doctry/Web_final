@@ -3,6 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { io } from 'socket.io-client';
+
+const socket = io.connect('ws://localhost:4000', { transport : ['websocket'] });
+
+// define socket.io methods
+
+socket.on('connect', () => {
+    console.log(socket.id)
+})
 
 ReactDOM.render(
   <React.StrictMode>
