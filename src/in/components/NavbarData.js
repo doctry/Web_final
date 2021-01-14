@@ -24,5 +24,12 @@ export const NavbarData = [
         path: "/contact",
         icon: <AiIcons.AiFillPhone/>,
         cName: "nav-text"
+    },
+
+    {
+        title: "Reservation",
+        path: "/reservation",
+        icon: <AiIcons.AiOutlineHdd/>,
+        cName: "nav-text"
     }
 ];
