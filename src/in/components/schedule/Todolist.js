@@ -19,7 +19,7 @@ function TodoItem(props) {
 }
 
 function Todolist() {
-  const [events, ids] = getEvents();
+  const {events, ids} = getEvents();
   return (
     <div className="right">
       <ul className="todo-app__list" id="todo-list">
