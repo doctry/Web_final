@@ -1,6 +1,6 @@
 import Calendar from "./components/schedule/Calendar";
 import Todolist from "./components/schedule/Todolist";
-import {CreateTask, Details} from "./components/CreateTask/CreateTask";
+import CreateTask from "./components/CreateTask/CreateTask";
 import React, { useState, useEffect } from "react";
 import "./components/schedule/Schedule.css";
 import userID from "./../userID";

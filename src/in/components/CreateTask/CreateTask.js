@@ -11,7 +11,6 @@ function SetText(id) {
 }
 
 function CreateTask(props) {
-
   const ClickEnter = () => {
     let AllInput = true;
     for (let i = 0; i < Details.length; i++) {
@@ -56,4 +55,4 @@ function CreateTask(props) {
   );
 }
 
-export { CreateTask, Details };
+export default CreateTask;
