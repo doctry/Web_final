@@ -13,7 +13,7 @@ function Schedule() {
     deadline: "", // yyyy-mm-dd
     type: "", // enum
     description: "",
-    isImportant: "",
+    isImportant: false,
   });
 
   const handleDateClick = () => {
