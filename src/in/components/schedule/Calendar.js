@@ -13,7 +13,7 @@ function Calendar(props) {
         plugins={[ dayGridPlugin, interactionPlugin ]}
         initialView="dayGridMonth"
         events={events}
-        dateClick={() => {props.onDateClick()}}
+        dateClick={(info) => {props.onDateClick(info.dateStr)}}
       />
     </div>
   );

@@ -29,7 +29,8 @@ function CreateTask(props) {
       };
       // take the task Details from here
       // also let inpattask in Schedule.js become false
-      props.getNewTask(task);
+      console.log(task);
+      props.onFinish();
     }
   };
 
@@ -46,6 +47,7 @@ function CreateTask(props) {
           />
         </li>
         <li key="1" className="create_item__item">
+          <h1 className="create_item-detail">日期</h1>
           <h1 className="create_item-detail">{props.deadline}</h1>
         </li>
         <li key="2" className="create_item__item">
@@ -53,7 +55,6 @@ function CreateTask(props) {
           <label>租借場地</label>
           <input
             type="radio"
-            placeholder={props.inner_text}
             onChange={() => {
               setType(1);
             }}
@@ -62,7 +63,6 @@ function CreateTask(props) {
           <label>其他</label>
           <input
             type="radio"
-            placeholder={props.inner_text}
             onChange={() => {
               setType(2);
             }}
@@ -89,7 +89,13 @@ function CreateTask(props) {
           />
         </li>
         <button onClick={ClickEnter}>送出</button>
-        <button onClick={props.cancel}>取消</button>
+        <button
+          onClick={() => {
+            props.onFinish();
+          }}
+        >
+          取消
+        </button>
       </ul>
     </div>
   );
