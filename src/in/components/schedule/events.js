@@ -3,8 +3,7 @@ import socket from "./../../../socket-io";
 import userID from "./../../../userID";
 
 function GetEvents() {
-  const [events, setEvents] = useState([
-  ]);
+  const [events, setEvents] = useState([]);
 
   const [ids, setIds] = useState([0, 1, 2]);
 
@@ -13,7 +12,7 @@ function GetEvents() {
       if (es) {
         setEvents(
           es.map((event) => {
-            return { title: event.title, date: event.date };
+            return { title: event.title, date: event.deadline };
           })
         );
         setIds(

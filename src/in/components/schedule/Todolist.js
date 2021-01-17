@@ -27,17 +27,12 @@ function TodoItem(props) {
 
 function Todolist() {
   const { events, ids } = getEvents();
-  const [eventCurrent, setEventCurrent] = useState([]);
-
-  useEffect(() => {
-    setEventCurrent(events);
-  }, [events])
 
   return (
     <div className="right">
-      <h1>{eventCurrent.len > 0 ? "待辦事項" : "尚無待辦事項"}</h1>
+      <h1>{events.length? "待辦事項" : "尚無待辦事項"}</h1>
       <ul className="todo-app__list" id="todo-list">
-        {eventCurrent.map((event, i) => {
+        {events.map((event, i) => {
           return (
             <TodoItem
               event={event}
