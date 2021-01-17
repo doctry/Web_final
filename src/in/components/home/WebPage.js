@@ -1,7 +1,6 @@
 function WebPage(props) {
 	return (
 		<div>
-			{console.log(props.board)}
 			<h1 className="WebPage_h1">前往: <a href={props.url} target="_blank" className="WebPage_a1">{props.name}</a></h1>
 			{props.board.length ?
 				<ul className="WebPage_ul">

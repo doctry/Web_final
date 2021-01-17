@@ -25,7 +25,6 @@ function Board2(setBoard) {
                     });
                 })
                 setBoard(store)
-                console.log(store)
             }
         }
     );
