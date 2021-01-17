@@ -8,8 +8,11 @@ const Main_page = () => {
     return <Main/>;
 }
 
-const Home_page = () => {
-    return <Home/>
+const Home_page = (props) => {
+    return <Home 
+                board0={props.board0} url0={props.url0} name0={props.name0}
+                board1={props.board1} url1={props.url1} name1={props.name1}
+            />
 }
 
 const Schedule_page = () => {

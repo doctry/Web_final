@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import WebPage_1 from "./WebPage_1";	// 經費補助
-import WebPage_2 from "./WebPage_2";	// 社團資訊
+import WebPage from "./WebPage";	
 
 
-function Announce() {
+function Announce(props) {
 	const [showPage1, setShowPage1] = useState(true);
 	const [showPage0, setShowPage0] = useState(false);
 
@@ -30,7 +29,11 @@ function Announce() {
 				<button className="Announce_button" onClick={show_page3}>我想一下</button>
 			</h1>
 			{
-				showPage1? <WebPage_1 /> : showPage0 ? <WebPage_2 /> : <WebPage_1 />
+				showPage1? 
+					<WebPage board={props.board0} url={props.url0} name={props.name0}/> 
+					: showPage0 ? 
+						<WebPage board={props.board1} url={props.url1} name={props.name1}/>
+						: <WebPage board={props.board0} url={props.url0} name={props.name0}/>
 			}
 		</div>
 	);
