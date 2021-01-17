@@ -18,14 +18,14 @@ function Add_link(props) {
 	return (
 		<ul>
 			<li key="link_list0" className="Add_link_li">
-                <h1 className="">{"Name: "}</h1>
-                <input id="link_input0" type="text" placeholder="your link's name" />
+                <h1 className="">{"連結名稱: "}</h1>
+                <input id="link_input0" type="text" placeholder="連結名稱" />
             </li>
 			<li key="link_list1" className="Add_link_li">
-                <h1 className="">{"Hyperlink: "}</h1>
-                <input id="link_input1" type="text" placeholder="link" />
+                <h1 className="">{"超連結: "}</h1>
+                <input id="link_input1" type="text" placeholder="網址" />
             </li>
-            <button className="Add_link_button" onClick={click_enter}>Enter</button>
+            <button className="Add_link_button" onClick={click_enter}>輸入</button>
 		</ul>
 	);
 }
