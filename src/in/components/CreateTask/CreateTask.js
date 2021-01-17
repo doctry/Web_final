@@ -1,6 +1,8 @@
 import { getElementError } from "@testing-library/react";
 import React, { useState } from "react";
 import "./CreateTask.css";
+import socket from "./../../../socket-io";
+import userID from "./../../../userID";
 
 function CreateTask(props) {
   const [title, setTitle] = useState("");
@@ -21,6 +23,7 @@ function CreateTask(props) {
     }
     if (inputPass) {
       let task = {
+        ID: userID,
         title: title,
         deadline: props.deadline, // yyyy-mm-dd
         type: type, // enum
@@ -30,6 +33,7 @@ function CreateTask(props) {
       // take the task Details from here
       // also let inpattask in Schedule.js become false
       console.log(task);
+      socket.emit("addTask", userID, task);
       props.onFinish();
     }
   };

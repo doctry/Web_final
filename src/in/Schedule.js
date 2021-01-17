@@ -1,9 +1,10 @@
 import Calendar from "./components/schedule/Calendar";
 import Todolist from "./components/schedule/Todolist";
 import CreateTask from "./components/CreateTask/CreateTask";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./components/schedule/Schedule.css";
 import socket from "./../socket-io";
+import userID from "./../userID";
 
 function Schedule() {
   const [inputTask, setInputTask] = useState(false);
@@ -16,21 +17,22 @@ function Schedule() {
 
   const stopInputTask = () => {
     setInputTask(false);
-  }
+  };
+
+  useEffect(() => {
+    if (inputTask === false) {
+      socket.emit("queryEvents", userID);
+    }
+  }, [inputTask]);
 
   return (
     <>
       <Calendar onDateClick={handleDateClick} />
-      {
-        inputTask ? (
-          <CreateTask
-            deadline={deadline}
-            onFinish={stopInputTask}
-          />
-        ) : (
-          <Todolist />
-        )
-      }
+      {inputTask ? (
+        <CreateTask deadline={deadline} onFinish={stopInputTask} />
+      ) : (
+        <Todolist />
+      )}
     </>
   );
 }
