@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom'
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import { Home_page, Schedule_page, Contact_page, Reservation_page } from "./Pages"
 import Navbar_in from "./components/Navbar_in"
 import {Board0, url_0} from "./components/home/Board0"
@@ -23,7 +23,7 @@ function Main() {
                 <Navbar_in/>
                 <Switch>
                     <Route 
-                        exact path="/" 
+                        exact path="/in" 
                         render={props => (
                             <Home_page {...props} 
                                 board0={board0} url0={url_0} name0={"台大社團經費補助"}
@@ -31,9 +31,9 @@ function Main() {
                             />
                         )}
                     />
-                    <Route path="/schedule" component={ Schedule_page }/>
-                    <Route path="/contact" component={ Contact_page }/>
-                    <Route path="/reservation" component={ Reservation_page }/>
+                    <Route path="/in/schedule" component={ Schedule_page }/>
+                    <Route path="/in/contact" component={ Contact_page }/>
+                    <Route path="/in/reservation" component={ Reservation_page }/>
                 </Switch>
             </BrowserRouter>
         </div>
