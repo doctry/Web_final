@@ -3,8 +3,11 @@ import React, { useState } from "react";
 import "./CreateTask.css";
 import socket from "./../../../socket-io";
 import userID from "./../../../userID";
+import getEvents from "./events";
 
 function CreateTask(props) {
+  const { events, loading, addTask, deleteTask } = getEvents();
+
   const [title, setTitle] = useState("");
   const [type, setType] = useState(0); // enum
   const [description, setDescription] = useState("");
@@ -34,6 +37,7 @@ function CreateTask(props) {
       // also let inpattask in Schedule.js become false
       console.log(task);
       socket.emit("addTask", userID, task);
+      addTask(task);
       props.onFinish();
     }
   };
