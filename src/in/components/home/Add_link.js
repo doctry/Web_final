@@ -11,7 +11,7 @@ function Add_link(props) {
         else if (text1 === "")
             alert("Hyperlink has not been input");
         else {
-            props.add_link({title: text0, href: text1, id:"link_ "+ (Number(props.last_id().substring(5)) + 1).toString()})
+            props.add_link({title: text0, href: text1, link_id:"link_ "+ (Number(props.last_id().substring(5)) + 1).toString()})
         }
     }
 
