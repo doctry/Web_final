@@ -26,23 +26,31 @@ function TodoItem(props) {
 }
 
 function Todolist() {
+  const [loading, setLoading] = useState(true);
+
   const { events, ids } = getEvents();
 
   return (
     <div className="right">
-      <h1>{events.length? "待辦事項" : "尚無待辦事項"}</h1>
-      <ul className="todo-app__list" id="todo-list">
-        {events.map((event, i) => {
-          return (
-            <TodoItem
-              event={event}
-              key={i.toString()}
-              id={i.toString()}
-              _id={ids[i]}
-            />
-          );
-        })}
-      </ul>
+      {loading ? (
+        <h1>loading</h1>
+      ) : (
+        <>
+          <h1>{events.length ? "待辦事項" : "尚無待辦事項"}</h1>
+          <ul className="todo-app__list" id="todo-list">
+            {events.map((event, i) => {
+              return (
+                <TodoItem
+                  event={event}
+                  key={i.toString()}
+                  id={i.toString()}
+                  _id={ids[i]}
+                />
+              );
+            })}
+          </ul>
+        </>
+      )}
     </div>
   );
 }

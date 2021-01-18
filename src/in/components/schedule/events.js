@@ -4,6 +4,7 @@ import userID from "./../../../userID";
 
 function GetEvents() {
   const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const [ids, setIds] = useState([0, 1, 2]);
 
@@ -24,7 +25,7 @@ function GetEvents() {
     }
   });
 
-  return { events, ids };
+  return { events, ids, loading };
 }
 
 export default GetEvents;
