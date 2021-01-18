@@ -6,26 +6,44 @@ function GetEvents() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const [ids, setIds] = useState([0, 1, 2]);
+  const comp = (a, b) => {
+    if (a.isImportant === true && b.isImportant === false) {
+      return -1;
+    }
+    if (a.isImportant === false && b.isImportant === true) {
+      return 1;
+    }
+    if (a.date > b.date) {
+      return 1;
+    }
+    if (a.date < b.date) {
+      return -1;
+    }
+    return 0;
+  }
+
+  const deleteTask = (idx) => {
+    let temp = events.splice(idx, 1);
+    setEvents(temp);
+  }
+
+  const addTask = (task) => {
+    let temp = events;
+    temp.push(task);
+    temp.sort(comp);
+    setEvents(temp);
+  }
 
   socket.on("events", (ID, es) => {
     if (ID === userID) {
       if (es) {
-        setEvents(
-          es.map((event) => {
-            return { title: event.title, date: event.deadline };
-          })
-        );
-        setIds(
-          es.map((event) => {
-            return event._id;
-          })
-        );
+        setEvents(es);
+        setLoading(false);
       }
     }
   });
 
-  return { events, ids, loading };
+  return { events, loading, addTask, deleteTask };
 }
 
 export default GetEvents;

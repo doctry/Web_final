@@ -9,6 +9,7 @@ import userID from "./../userID";
 function Schedule() {
   const [inputTask, setInputTask] = useState(false);
   const [deadline, setDeadline] = useState("");
+  const [init, setInit] = useState(true);
 
   const handleDateClick = (date) => {
     setInputTask(true);
@@ -20,10 +21,11 @@ function Schedule() {
   };
 
   useEffect(() => {
-    if (inputTask === false) {
+    if(init) {
       socket.emit("queryEvents", userID);
+      setInit(false);
     }
-  }, [inputTask]);
+  })
 
   return (
     <>

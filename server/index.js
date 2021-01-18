@@ -21,11 +21,15 @@ io.on("connection", (socket) => {
     socket.emit("events", ID, ret);
   }
 
+  function emitResult(ID, result) {
+    socket.emit("result", ID, result+"完成")
+  }
+
   console.log("a user connectted");
 
   socket.on("addTask", async (ID, task) => {
     await Task.insertMany(task);
-    emitEvent(ID);
+    emitResult(ID, "加入")
   });
 
   socket.on("queryEvents", (ID) => {
@@ -34,7 +38,7 @@ io.on("connection", (socket) => {
 
   socket.on("deleteTask", async (ID,_id) => {
     await Task.deleteMany({_id: _id});
-    emitEvent(ID);
+    emitResult(ID, "刪除")
   });
 });
 

@@ -7,7 +7,7 @@
 .right {
     position: relative;
     z-index: -1;
-    width: 20vw;
+    width: 25vw;
     margin-right: 5vw;
     float: right;
 }
@@ -38,7 +38,7 @@
 .todo-app__item-detail {
     font-weight: 300;
     overflow-wrap: break-word;
-    width: 90%;
+    width: 98%;
     transition: opacity 0.3s;
     height: 100%;
 }
