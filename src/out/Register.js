@@ -5,15 +5,26 @@ import "./Register.css"
 
 const { Option } = Select;
 
-const areas = [
-  { label: 'Beijing', value: 'Beijing' },
-  { label: 'Shanghai', value: 'Shanghai' },
-];
-
-const sights = {
-  Beijing: ['Tiananmen', 'Great Wall'],
-  Shanghai: ['Oriental Pearl', 'The Bund'],
+const layout = {
+  labelCol: {
+    span: 8,
+  },
+  wrapperCol: {
+    span: 16,
+  },
 };
+
+// const validateMessages = {
+//   required: '${label} is required!',
+//   types: {
+//     email: '${label} is not a valid email!',
+//     number: '${label} is not a valid number!',
+//   },
+//   number: {
+//     range: '${label} must be between ${min} and ${max}',
+//   },
+// };
+
 
 function Register() {
     const [form] = Form.useForm();
@@ -29,17 +40,71 @@ function Register() {
     return(
     <div>
         <section className="banner">
-            <div className="title">
+            <div className="banner-title">
                 <h1>社團資訊系統</h1>
                 <p>打造專屬你的社團管理網站</p>
             </div>
         </section>
 
         <section className="register">
-            <div className="register-tilte">
+            <div className="register-title">
                 <h1>註冊</h1>
             </div>
-            <Form form={form} name="dynamic_form_nest_item" onFinish={onFinish} autoComplete="off">
+            {/* <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}> */}
+            <Form {...layout} name="nest-messages" onFinish={onFinish}>
+              <Form.Item
+                name="clubname"
+                label="社團"
+                rules={[ 
+                  { required: true } 
+                ]}
+              > 
+                <Input/>
+              </Form.Item>
+
+              <Form.Item
+                name="account"
+                label="帳號"
+                rules={[ 
+                  { required: true } 
+                ]}
+              > 
+                <Input/>
+              </Form.Item>
+
+              <Form.Item
+                name="password"
+                label="密碼"
+                rules={[ 
+                  { required: true } 
+                ]}
+              > 
+                <Input.Password/>
+              </Form.Item>
+
+              <Form.Item
+                name="confirm password"
+                label="確認密碼"
+                rules={[ 
+                  { required: true },
+                  ({ getFieldValue }) => ({
+                    validator(_, value) {
+                      if (!value || getFieldValue('password') === value) {
+                        return Promise.resolve();
+                      }
+                      return Promise.reject('需與密碼一致!');
+                    },
+                  })
+                ]}
+              > 
+                <Input.Password/>
+              </Form.Item>
+              
+              <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
+                <Button type="primary" htmlType="submit">
+                  註冊
+                </Button>
+              </Form.Item>
 
             </Form>
         </section>

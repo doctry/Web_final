@@ -92,7 +92,7 @@ function Home () {
                     }}
                 ></Input.Search>
 
-                <div className="register">
+                <div className="login-register">
                     或是
                     <Link to="/register">加入我們
                     </Link>
