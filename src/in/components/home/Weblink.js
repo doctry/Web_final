@@ -14,14 +14,14 @@ function Weblink() {
 	}
 
 	const click_img = (id) => {
-		setLinkBoard(linkBoard.filter(item => item.id !== id));
+		setLinkBoard(linkBoard.filter(item => item.link_id !== id));
 	}
 
 	const last_id = () => {
 		if (linkBoard.length === 0) 
 			return "0"
 		else 
-			return linkBoard[linkBoard.length - 1].id
+			return linkBoard[linkBoard.length - 1].link_id
 	}
 
 	const add_newlink = (newLink) => {

@@ -26,14 +26,14 @@ function Announce(props) {
 			<h1 className="Announce_h1">
 				<button className="Announce_button" onClick={show_page1}>經費補助</button> 
 				<button className="Announce_button" onClick={show_page2}>社團資訊</button> 
-				<button className="Announce_button" onClick={show_page3}>我想一下</button>
+				<button className="Announce_button" onClick={show_page3}>學生活動管理處</button>
 			</h1>
 			{
 				showPage1? 
 					<WebPage board={props.board0} url={props.url0} name={props.name0}/> 
 					: showPage0 ? 
 						<WebPage board={props.board1} url={props.url1} name={props.name1}/>
-						: <WebPage board={props.board0} url={props.url0} name={props.name0}/>
+						: <WebPage board={props.board2} url={props.url2} name={props.name2}/>
 			}
 		</div>
 	);

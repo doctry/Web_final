@@ -35,7 +35,6 @@ function Board0(setBoard) {
                         });
                 })
                 setBoard(store)
-                console.log(store)
             }
         }
     );
