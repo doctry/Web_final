@@ -1,6 +1,6 @@
 import Calendar from "./components/schedule/Calendar";
 import Todolist from "./components/schedule/Todolist";
-import CreateTask from "./components/CreateTask/CreateTask";
+import CreateTask from "./components/schedule/CreateTask";
 import React, { useState, useEffect } from "react";
 import "./components/schedule/Schedule.css";
 import socket from "./../socket-io";
@@ -24,6 +24,12 @@ function Schedule() {
     if(init) {
       socket.emit("queryEvents", userID);
       setInit(false);
+    }
+  })
+
+  socket.on('result', (ID, result) => {
+    if(ID === userID) {
+      alert(result);
     }
   })
 

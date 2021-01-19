@@ -6,7 +6,7 @@ import getEvents from "./events"
 import "./Schedule.css";
 
 function Calendar(props) {
-  const {events,ids} = getEvents();
+  const { events, loading, addTask, deleteTask } = getEvents();
   return (
     <div className="calendar">
       <FullCalendar
