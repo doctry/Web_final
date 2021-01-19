@@ -1,5 +1,8 @@
 .navbar {
-    background-color: #344E5C;
+    background-image: url("./img/banner-collaborate.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: 25% 70%;
     height: 200px;
     display: flex;
     justify-content: flex-end;

@@ -19,7 +19,7 @@ function Navbar_in () {
     >
         <div className="navbar">
             <div className="navbar-text">
-                Bla
+                陳述局
             </div>
             <Link to="#" className="navbar-menu">
                 <FaIcons.FaBars onClick={ clickSidebar }/>
