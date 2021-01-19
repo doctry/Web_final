@@ -7,28 +7,28 @@ import * as AiIcons from "react-icons/ai"
 export const NavbarData = [
     {
         title: "Home",
-        path: "/",
+        path: "/in",
         icon: <AiIcons.AiFillHome/>,
         cName: "nav-text"
     },
     
     {
         title: "Schedule",
-        path: "/schedule",
+        path: "/in/schedule",
         icon: <AiIcons.AiFillSchedule/>,
         cName: "nav-text"
     },
 
     {
         title: "Contact",
-        path: "/contact",
+        path: "/in/contact",
         icon: <AiIcons.AiFillPhone/>,
         cName: "nav-text"
     },
 
     {
         title: "Reservation",
-        path: "/reservation",
+        path: "/in/reservation",
         icon: <AiIcons.AiOutlineHdd/>,
         cName: "nav-text"
     }
