@@ -26,7 +26,7 @@ function Main() {
                 <Navbar_in/>
                 <Switch>
                     <Route 
-                        exact path="/in" 
+                        exact path="/in"
                         render={props => (
                             <Home_page {...props} 
                                 board0={board0} url0={url_0} name0={"臺大社團經費補助"}
