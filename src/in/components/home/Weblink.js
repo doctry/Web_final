@@ -3,8 +3,6 @@ import links from "./links";
 import ShowLinks from "./ShowLinks";
 import Add_link from "./Add_link";
 
-
-
 function Weblink() {
 	const [linkBoard, setLinkBoard] = useState(links);
 	const [show, setShow] = useState(true);

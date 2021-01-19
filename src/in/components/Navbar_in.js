@@ -15,11 +15,11 @@ function Navbar_in () {
 
     return (
     <IconContext.Provider
-        value={{ color: '#EFC958'}}
+        value={{ color: '#3A5D99'}}
     >
         <div className="navbar">
             <div className="navbar-text">
-                陳述局
+                社團資訊系統
             </div>
             <Link to="#" className="navbar-menu">
                 <FaIcons.FaBars onClick={ clickSidebar }/>

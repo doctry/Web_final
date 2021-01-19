@@ -12,7 +12,7 @@
 .navbar-text {
     text-decoration: none;
     font-family: cursive;
-    color: #EFC958;
+    color: #3A5D99;
     font-size: 72px;
 }
 
@@ -25,9 +25,9 @@
 }
 
 .nav-menu {
-    background-color: #344E5C;
+    background-color: #D5E6F5;
     margin-top: 200px;
-    width: 250px;
+    width: 20%;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -54,7 +54,7 @@
 .nav-text a {
     text-decoration: none;
     font-family: cursive;
-    color: #EFC958;
+    color: #3A5D99;
     font-size: 18px;
     width: 95%;
     height: 100%;
