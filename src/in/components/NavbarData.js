@@ -6,28 +6,28 @@ import * as AiIcons from "react-icons/ai"
 
 export const NavbarData = [
     {
-        title: "Home",
+        title: "首頁",
         path: "/in",
         icon: <AiIcons.AiFillHome/>,
         cName: "nav-text"
     },
     
     {
-        title: "Schedule",
+        title: "行事曆",
         path: "/in/schedule",
         icon: <AiIcons.AiFillSchedule/>,
         cName: "nav-text"
     },
 
     {
-        title: "Contact",
+        title: "聯絡我們",
         path: "/in/contact",
         icon: <AiIcons.AiFillPhone/>,
         cName: "nav-text"
     },
 
     {
-        title: "Reservation",
+        title: "場地借用",
         path: "/in/reservation",
         icon: <AiIcons.AiOutlineHdd/>,
         cName: "nav-text"
