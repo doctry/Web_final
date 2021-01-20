@@ -14,8 +14,8 @@ load_dotenv()
 account = os.getenv("account")
 password = os.getenv("password")
 
-print(account)
-print(password)
+print("account: %s" % account)
+print("password: %s" % password)
 
 datas = pd.read_excel("./server/reservation/members.xlsx", engine="openpyxl").values
 
