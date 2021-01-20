@@ -1,8 +1,11 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useRef, useState } from "react"
 import { Input, message } from 'antd'
 import 'antd/dist/antd.css'
 import "./Home.css"
 import { Link, Redirect } from "react-router-dom/cjs/react-router-dom.min"
+
+// websocket
+import socket from '../socket-io'
 
 function Home () {
     const [account, setAccount] = useState('')
@@ -16,17 +19,17 @@ function Home () {
             const { type, msg } = s
             const content = {
               content: msg,
-              duration: 0.5
+              duration: 1
             }
       
             switch (type) {
-              case 'success':
+              case '成功':
                 message.success(content)
                 break
-              case 'info':
+              case '資訊':
                 message.info(content)
                 break
-              case 'danger':
+              case '危險':
               default:
                 message.error(content)
                 break
@@ -70,21 +73,32 @@ function Home () {
                     enterButton="送出"
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="社團密碼"
-                    onSearch={(msg) => {
-                        if (!msg || !account) {
+                    onSearch={(password) => {
+                        if (!password || !account) {
                             displayStatus({
                                 type: '錯誤',
-                                msg: '請輸入有效的社團帳號與密碼'
+                                msg: '社團帳號與密碼不可空白'
                             })
-                            setAccount('')
-                            setPassword('')
                         } else {
-                            // TODO:
                             // Handle backend
-                            localStorage.setItem("account", account)
-                            setLogin(true)
+                            socket.emit("validateClubLogin", account, password)
+                            socket.on("returnClubLogin", (result) => {
+                                if (result) {
+                                    displayStatus({
+                                        type: '成功',
+                                        msg: '歡迎！'
+                                    })
+                                    localStorage.setItem("account", account)
+                                    setLogin(true)
+                                } else {
+                                    displayStatus({
+                                        type: '錯誤',
+                                        msg: '無效的社團帳號與密碼'
+                                    })
+                                }
+                            })
                         }
-
+                            
                         setAccount('')
                         setPassword('')
                     }}

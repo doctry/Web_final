@@ -1,9 +1,9 @@
-import React from "react"
-import { Form, Input, Button, Space, Select } from 'antd';
+import React, { useState } from "react"
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min"
+import { Form, Input, Button, message } from 'antd';
 import 'antd/dist/antd.css'
 import "./Register.css"
-
-const { Option } = Select;
+import socket from "../socket-io";
 
 const layout = {
   labelCol: {
@@ -14,28 +14,42 @@ const layout = {
   },
 };
 
-// const validateMessages = {
-//   required: '${label} is required!',
-//   types: {
-//     email: '${label} is not a valid email!',
-//     number: '${label} is not a valid number!',
-//   },
-//   number: {
-//     range: '${label} must be between ${min} and ${max}',
-//   },
-// };
+const displayRegisterSuccess = () => {
+    const content = {
+      content: "註冊成功！",
+      duration: 1
+    }
 
+    message.success(content)
+    window.location = "/"
+}
 
 function Register() {
     const [form] = Form.useForm();
+    const [clubnameExists, setClubnameExists] = useState(false)
+    const [clubaccountExists, setClubaccountExists] = useState(false)
+
+    socket.on("returnCheckClubName", (result) => {
+        if (result) {
+            setClubnameExists(true)
+        } else {
+            setClubnameExists(false)
+        }
+    })
+
+    socket.on("returnCheckClubAccount", (result) => {
+        if (result) {
+            setClubaccountExists(true)
+        } else {
+            setClubaccountExists(false)
+        }
+    })
     
     const onFinish = values => {
-        console.log('Received values of form:', values);
-      };
-    
-    const handleChange = () => {
-        form.setFieldsValue({ sights: [] });
-      };
+        // console.log('Received values of form:', values)
+        socket.emit("addClubAccount", values.clubname, values.account, values.password)
+        displayRegisterSuccess()
+    };
 
     return(
     <div>
@@ -56,7 +70,17 @@ function Register() {
                 name="clubname"
                 label="社團"
                 rules={[ 
-                  { required: true } 
+                  { required: true },
+                  () => ({
+                    validator(_, clubname) {
+                      socket.emit("checkClubName", clubname)
+                      if (clubnameExists) {
+                          return Promise.reject('社團名稱已註冊！');
+                      }
+
+                      return Promise.resolve();
+                    },
+                  })
                 ]}
               > 
                 <Input/>
@@ -66,7 +90,17 @@ function Register() {
                 name="account"
                 label="帳號"
                 rules={[ 
-                  { required: true } 
+                  { required: true },
+                  () => ({
+                    validator(_, account) {
+                      socket.emit("checkClubAccount", account)
+                      if (clubaccountExists) {
+                          return Promise.reject('該帳號已被使用！');
+                      }
+
+                      return Promise.resolve();
+                    },
+                  })
                 ]}
               > 
                 <Input/>
