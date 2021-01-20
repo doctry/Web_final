@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import getEvents from "./events";
 import X from "./img/x.png";
 import "./Schedule.css";
 import socket from "./../../../socket-io";
@@ -27,35 +26,24 @@ function TodoItem(props) {
   );
 }
 
-function Todolist() {
-  const { events, loading, addTask, deleteTask } = getEvents();
-
-  const [display, setDisplay] = useState([]);
-
-  useEffect(() => {
-    if (events) {
-      let temp = events;
-      temp.sort();
-      setDisplay(temp);
-    }
-  }, [events]);
+function Todolist(props) {
 
   return (
     <div className="right">
-      {loading ? (
+      {props.loading ? (
         <h1>載入待辦事項...</h1>
       ) : (
         <>
-          <h1>{display.length ? "待辦事項" : "尚無待辦事項"}</h1>
+          <h1>{props.events.length ? "待辦事項" : "尚無待辦事項"}</h1>
           <ul className="todo-app__list" id="todo-list">
-            {display.map((event, i) => {
+            {props.events.map((event, i) => {
               return (
                 <TodoItem
                   event={event}
                   key={i.toString()}
                   id={i.toString()}
                   _id={event._id}
-                  deleteTask={deleteTask}
+                  deleteTask={() => {props.deleteTask()}}
                 />
               );
             })}

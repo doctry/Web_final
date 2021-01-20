@@ -4,7 +4,7 @@ connectMongo();
 
 const PORT = 4000;
 
-const {spawn} = require("child_process");
+const { spawn } = require("child_process");
 
 const app = require("express")();
 const server = require("http").createServer(app);
@@ -23,36 +23,32 @@ io.on("connection", (socket) => {
     socket.emit("events", ID, ret);
   }
 
-  function emitResult(ID, result) {
-    socket.emit("result", ID, result+"完成")
-  }
-
   console.log("a user connectted");
 
   socket.on("addTask", async (ID, task) => {
+    console.log(task);
     await Task.insertMany(task);
-    emitResult(ID, "加入")
+    emitEvent(ID);
   });
 
   socket.on("queryEvents", (ID) => {
     emitEvent(ID);
   });
 
-  socket.on("deleteTask", async (ID,_id) => {
-    await Task.deleteMany({_id: _id});
-    emitResult(ID, "刪除")
+  socket.on("deleteTask", async (ID, _id) => {
+    await Task.deleteMany({ _id: _id });
   });
 
   socket.on("addMember", () => {
     const childPython = spawn("python", ["./server/reservation/reserve.py"]);
 
     childPython.stdout.on("data", (data) => {
-        console.log(`stdout: ${data}`)
+      console.log(`stdout: ${data}`);
     });
 
     childPython.on("close", (code) => {
-        console.log(`child process exited with code: ${code}`)
-    })
+      console.log(`child process exited with code: ${code}`);
+    });
   });
 });
 

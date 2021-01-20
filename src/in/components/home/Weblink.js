@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import links from "./links";
 import ShowLinks from "./ShowLinks";
-import Add_link from "./Add_link";
+import Addlink from "./Add_link";
 
 
 
@@ -39,7 +39,7 @@ function Weblink() {
 				<h2 onClick={click_whichshow}>返回書籤列</h2>
 			}
 			{
-				show? <ShowLinks linkboard={linkBoard} click_img={click_img}/> : <Add_link last_id={last_id} add_link={add_newlink}/>
+				show? <ShowLinks linkboard={linkBoard} click_img={click_img}/> : <Addlink last_id={last_id} add_link={add_newlink}/>
 			}
 		</div>
 	);

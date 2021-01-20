@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 
-function Add_link(props) {
+function Addlink(props) {
 
     const click_enter = () => {
         let text0 = document.getElementById("link_input0").value;
@@ -30,4 +30,4 @@ function Add_link(props) {
 	);
 }
 
-export default Add_link;
+export default Addlink;

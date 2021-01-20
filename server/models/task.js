@@ -11,7 +11,7 @@ const TaskSchema = new Schema({
 		type: String,
 		required: [true, '\'title\' field is required.']
 	},
-	deadline: {
+	date: {
 		type: String,
 		required: [true, '\'deadline\' field is required.']
 	},

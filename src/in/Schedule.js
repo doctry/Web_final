@@ -5,11 +5,15 @@ import React, { useState, useEffect } from "react";
 import "./components/schedule/Schedule.css";
 import socket from "./../socket-io";
 import userID from "./../userID";
+import getEvents from "./components/schedule/events";
 
 function Schedule() {
   const [inputTask, setInputTask] = useState(false);
   const [deadline, setDeadline] = useState("");
   const [init, setInit] = useState(true);
+  const [display, setDisplay] = useState([]);
+
+  const { events, loading, addTask, deleteTask } = getEvents();
 
   const handleDateClick = (date) => {
     setInputTask(true);
@@ -21,25 +25,37 @@ function Schedule() {
   };
 
   useEffect(() => {
-    if(init) {
+    if (init) {
       socket.emit("queryEvents", userID);
       setInit(false);
     }
-  })
+  });
 
-  socket.on('result', (ID, result) => {
-    if(ID === userID) {
-      alert(result);
+  useEffect(() => {
+    if(events) {
+      setDisplay(events);
     }
-  })
+  },[events])
 
   return (
     <>
-      <Calendar onDateClick={handleDateClick} />
+      <Calendar onDateClick={handleDateClick} events={display} />
       {inputTask ? (
-        <CreateTask deadline={deadline} onFinish={stopInputTask} />
+        <CreateTask
+          deadline={deadline}
+          onFinish={stopInputTask}
+          addTask={(task) => {
+            addTask(task);
+          }}
+        />
       ) : (
-        <Todolist />
+        <Todolist
+          events={display}
+          loading={loading}
+          deleteTask={() => {
+            deleteTask();
+          }}
+        />
       )}
     </>
   );
