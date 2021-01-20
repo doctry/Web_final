@@ -32,10 +32,25 @@
 }
 
 .place_Weblink {
-    width: 15%;
+    width: 20%;
     float: right;
     background-color: #83B9C7;
     height: 100%;
+}
+
+.place_Weblink h1 {
+    margin-top: 1em;
+    font-size: 2vw;
+}
+
+.place_Weblink h2 {
+    margin:auto;
+    width: 40%;
+    font-size: 1.2vw;
+    background-color: rgb(135, 204, 181);
+    border-radius: 10px;
+    color: rgb(119, 73, 17);
+    cursor: pointer;
 }
 
 .WebPage_ul {
@@ -78,6 +93,7 @@
 }
 
 .Weblink_ul {
+    margin-top: 2em;
     width: 100%;
 }
 
@@ -88,7 +104,7 @@
 
 .Weblink_a {
     margin-left: 0.5rem !important;
-    font-size: 25px;
+    font-size: 1.5vw;
     float: left;
     padding-top: 0px;
     overflow : hidden;
@@ -116,15 +132,7 @@
     right: 17.5px;
 }
 
-.Weblink_h2 {
-    margin:auto;
-    width: 40%;
-    font-size: 20px;
-    background-color: rgb(135, 204, 181);
-    border-radius: 10px;
-    color: rgb(119, 73, 17);
-    cursor: pointer;
-}
+
 
 .Add_link_li {
     float: left;

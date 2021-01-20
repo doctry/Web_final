@@ -33,10 +33,10 @@ function Weblink() {
 
 	return (
 		<div className="place_Weblink">
-			<h1 className="Weblink_h1">書籤列</h1>
+			<h1>書籤列</h1>
 			{show? 
-				<h1 className="Weblink_h2" onClick={click_whichshow}>增加連結</h1> : 
-				<h1 className="Weblink_h2" onClick={click_whichshow}>返回書籤列</h1>
+				<h2 onClick={click_whichshow}>增加連結</h2> : 
+				<h2 onClick={click_whichshow}>返回書籤列</h2>
 			}
 			{
 				show? <ShowLinks linkboard={linkBoard} click_img={click_img}/> : <Add_link last_id={last_id} add_link={add_newlink}/>
