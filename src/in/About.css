@@ -30,13 +30,13 @@
     justify-content: center;
     margin-top: 3em;
 
-    background-image: url("./components/img/Author_background.jpg");
+    /* background-image: url("./components/img/Author_background.jpg"); */
     /* border: solid;
     border-color: coral; */
 }
 
 .author {
-    border: solid;
+    /* border: solid; */
 }
 
 .author h1 {

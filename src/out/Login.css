@@ -39,8 +39,9 @@
     align-items: center;
     justify-content: center;
     height: 50vh;
-    width: 500px;
+    width: 30vw;
     margin: auto;
+    /* border: solid; */
 }
 
 .login-title {
@@ -51,14 +52,32 @@
 
 .login-title h1 {
     margin: 0;
-    margin-right: 20px;
     font-size: 3em;
+}
+
+.login-input {
+    margin: 1em;
+}
+
+.login-decision {
+    min-width: 100%;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.login-input-button {
+    width: 5em;
+    margin-left: 10em;
+    font-size: 1.2em;
 }
 
 .login-register {
     position: relative;
-    right: 13vw;
-    top: 20px;
+    font-size: 1.2em;
+    margin-left: 3em;
 }
 
 

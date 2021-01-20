@@ -1,8 +1,8 @@
-import Home from "./Home"
+import Login from "./Login"
 import Register from "./Register"
 
 const Login_page = () => {
-    return <Home/>
+    return <Login/>
 };
 
 const Register_page = () => {

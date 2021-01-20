@@ -1,8 +1,5 @@
 const UserID = () => {
-    const user_id = localStorage.getItem("account");
-    console.log(user_id)
-
-    return user_id;
+    return localStorage.getItem("account");
 }
 
 const userID = UserID()

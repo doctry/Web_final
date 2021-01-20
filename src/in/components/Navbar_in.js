@@ -1,9 +1,8 @@
 import React, { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, Redirect } from "react-router-dom"
 import "./Navbar_in.css"
 import { NavbarData } from "./NavbarData"
 import * as FaIcons from "react-icons/fa"
-import * as AiIcons from "react-icons/ai"
 import { IconContext } from "react-icons/lib"
 
 function Navbar_in () {
@@ -29,9 +28,17 @@ function Navbar_in () {
         <nav className={ sidebar ? "nav-menu active" : "nav-menu"}>
             <ul className="nav-menu-items" onClick={ clickSidebar }>
                 { NavbarData.map((item, index) => {
+                    // if (item.path === '/') {
+                    //     localStorage.setItem('account', "")
+                    // }
                     return (
                         <li key={index} className={ item.cName }>
-                            <Link to={ item.path }>
+                            <Link to={ item.path } onClick={ () => {
+                                if(item.path === '/') {
+                                    localStorage.setItem("account", '')
+                                    window.location = "/"
+                                }
+                            }}>
                                 { item.icon }
                                 <span>{ item.title }</span>
                             </Link>

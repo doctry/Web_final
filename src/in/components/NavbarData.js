@@ -2,6 +2,7 @@ import React from "react"
 
 // import * as FaIcons from "react-icons/fa"
 import * as AiIcons from "react-icons/ai"
+import { BiLogOut } from "react-icons/bi";
 // import * as IoIcons from "react-icons/io"
 
 export const NavbarData = [
@@ -30,6 +31,13 @@ export const NavbarData = [
         title: "場地借用",
         path: "/in/reservation",
         icon: <AiIcons.AiOutlineHdd/>,
+        cName: "nav-text"
+    },
+
+    {
+        title: "登出",
+        path: "/",
+        icon: <BiLogOut/>,
         cName: "nav-text"
     }
 ];
