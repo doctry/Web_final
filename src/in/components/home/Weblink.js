@@ -26,7 +26,7 @@ function Weblink() {
       socket.emit("queryWeblinks", userID);
       setInit(false);
     }
-  });
+  },[init]);
 
   useEffect(() => {
     if (weblinks) {

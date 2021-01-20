@@ -41,7 +41,7 @@ function Schedule() {
       socket.emit("queryEvents", userID);
       setInit(false);
     }
-  });
+  },[init]);
 
   useEffect(() => {
     if (events) {
