@@ -3,9 +3,8 @@ import "./CreateTask.css";
 import userID from "./../../../userID";
 
 function CreateTask(props) {
-
   const [title, setTitle] = useState("");
-  const [type, setType] = useState(0); // enum
+  // const [type, setType] = useState(0); // enum
   const [description, setDescription] = useState("");
   const [isImportant, setIsImportant] = useState(false);
 
@@ -15,17 +14,18 @@ function CreateTask(props) {
       alert("請輸入待辦事項");
       inputPass = false;
       console.log("FAQ");
-    } else if (type === 0) {
-      alert("請選取類別");
-      inputPass = false;
-      console.log("FAQ");
     }
+    //   else if (type === 0) {
+    //   alert("請選取類別");
+    //   inputPass = false;
+    //   console.log("FAQ");
+    // }
     if (inputPass) {
       let task = {
         ID: userID,
         title: title,
         date: props.deadline, // yyyy-mm-dd
-        type: type, // enum
+        // type: type, // enum
         description: description,
         isImportant: isImportant,
       };
@@ -53,7 +53,7 @@ function CreateTask(props) {
           <h1 className="create_item-detail">日期</h1>
           <h1 className="create_item-detail">{props.deadline}</h1>
         </li>
-        <li key="2" className="create_item__item">
+        {/* <li key="2" className="create_item__item">
           <h1 className="create_item-detail">類別</h1>
           <label>租借場地</label>
           <input
@@ -71,7 +71,7 @@ function CreateTask(props) {
             }}
             checked={type === 2}
           />
-        </li>
+        </li> */}
         <li key="3" className="create_item__item">
           <h1 className="create_item-detail">備註</h1>
           <input
