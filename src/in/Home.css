@@ -32,23 +32,32 @@
 .place_Weblink {
     width: 20%;
     float: right;
-    background-color: #83B9C7;
+    background-color: #AFEEEE;
     height: 100%;
 }
 
 .place_Weblink h1 {
     margin-top: 1em;
-    font-size: 2vw;
+    font-size: 2.7em;
+    color: #2F4F4F;
+    font-weight: 1000;
 }
 
 .place_Weblink h2 {
     margin:auto;
     width: 40%;
-    font-size: 1.2vw;
-    background-color: rgb(135, 204, 181);
+    font-size: 1.5em;
+    font-weight: 700;
+    background-color: rgb(61, 228, 172);
     border-radius: 10px;
-    color: rgb(119, 73, 17);
+    color: rgb(114, 70, 16);
     cursor: pointer;
+}
+
+.WebPage_h1 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 10vw;
 }
 
 .WebPage_ul {
@@ -58,13 +67,13 @@
 
 .WebPage_li {
     width: 100%;
-    height: 60px;
+    height: 6vh;
     border-top: 1px solid #666;
 }
 
 .WebPage_li h2 {
     border-radius: 10px;
-    margin-top: 2vh;
+    margin-top: 1.5vh;
     padding: 0 6px;
     height: 30px;
     font-size: 1em;
@@ -75,10 +84,9 @@
 
 .WebPage_li a {
     margin-left: 0.5rem !important;
-    margin-top: 1vh;
-    font-size: 1em;
+    margin-top: 1.5vh;
+    font-size: 1.3em;
     float: left;
-    padding-top: 10px;
     overflow : hidden;
     text-overflow : ellipsis;
     color: #556B2F;
@@ -86,8 +94,9 @@
 
 .WebPage_li h3 {
     float: right;
-    font-size: 1em;
-    margin-right: 22px;
+    font-size: 1.2em;
+    margin-top: 1.5vh;
+    margin-right: 1.2vw;
     margin-bottom: 0;
     color: #191970;
 }
@@ -104,7 +113,8 @@
 
 .Weblink_a {
     margin-left: 0.5rem !important;
-    font-size: 1.5vw;
+    font-size: 1.8em;
+    font-weight: 600;
     float: left;
     padding-top: 0px;
     overflow : hidden;
@@ -134,10 +144,18 @@
 
 .Add_link_li {
     float: left;
-    font-size: 15px;
+    width: 100%;
+    list-style-type: none;
+}
+
+.Add_link_li h1 {
+    float: left;
+    padding-right: 10vw;
+    font-size: 1.5rem;
 }
 
 .Add_link_button {
-    margin-top: 150px;
-    float: left;
+    margin-top: 5vh;
+    margin-right: 2vw;
+    float: right;
 }

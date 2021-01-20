@@ -27,7 +27,7 @@ export const NavbarData = [
     },
 
     {
-        title: "場地借用",
+        title: "增加成員",
         path: "/in/reservation",
         icon: <AiIcons.AiOutlineHdd/>,
         cName: "nav-text"
