@@ -28,16 +28,18 @@ function GetEvents() {
   }
 
   const addTask = (task) => {
-    let temp = events;
-    temp.push(task);
-    temp.sort(comp);
-    setEvents(temp);
+    console.log(task);
+    socket.emit('addTask', userID, task);
+    setLoading(true);
   }
 
   socket.on("events", (ID, es) => {
     if (ID === userID) {
       if (es) {
-        setEvents(es);
+        console.log('events');
+        let temp = es;
+        temp.sort(comp);
+        setEvents(temp);
         setLoading(false);
       }
     }

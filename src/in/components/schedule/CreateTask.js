@@ -3,10 +3,8 @@ import React, { useState } from "react";
 import "./CreateTask.css";
 import socket from "./../../../socket-io";
 import userID from "./../../../userID";
-import getEvents from "./events";
 
 function CreateTask(props) {
-  const { events, loading, addTask, deleteTask } = getEvents();
 
   const [title, setTitle] = useState("");
   const [type, setType] = useState(0); // enum
@@ -28,7 +26,7 @@ function CreateTask(props) {
       let task = {
         ID: userID,
         title: title,
-        deadline: props.deadline, // yyyy-mm-dd
+        date: props.deadline, // yyyy-mm-dd
         type: type, // enum
         description: description,
         isImportant: isImportant,
@@ -36,8 +34,7 @@ function CreateTask(props) {
       // take the task Details from here
       // also let inpattask in Schedule.js become false
       console.log(task);
-      socket.emit("addTask", userID, task);
-      addTask(task);
+      props.addTask(task);
       props.onFinish();
     }
   };
@@ -78,7 +75,7 @@ function CreateTask(props) {
           />
         </li>
         <li key="3" className="create_item__item">
-          <h1 className="create_item-detail">敘述</h1>
+          <h1 className="create_item-detail">備註</h1>
           <input
             type="text"
             onChange={(e) => {
