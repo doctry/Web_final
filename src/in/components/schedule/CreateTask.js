@@ -43,6 +43,7 @@ function CreateTask(props) {
         <li key="0" className="create_item__item">
           <h1 className="create_item-detail">待辦事項</h1>
           <input
+            className="create_item-input"
             type="text"
             onChange={(e) => {
               setTitle(e.target.value);
@@ -75,6 +76,7 @@ function CreateTask(props) {
         <li key="3" className="create_item__item">
           <h1 className="create_item-detail">備註</h1>
           <input
+            className="create_item-input"
             type="text"
             onChange={(e) => {
               setDescription(e.target.value);
@@ -84,6 +86,7 @@ function CreateTask(props) {
         <li key="4" className="create_item__item">
           <h1 className="create_item-detail">重要事項</h1>
           <input
+            className="create_item-checkbox"
             type="checkbox"
             onChange={() => {
               setIsImportant(!isImportant);
@@ -91,8 +94,9 @@ function CreateTask(props) {
             checked={isImportant}
           />
         </li>
-        <button onClick={ClickEnter}>送出</button>
+        <button className="create_item_btn" onClick={ClickEnter}>送出</button>
         <button
+          className="create_item_btn"
           onClick={() => {
             props.onFinish();
           }}

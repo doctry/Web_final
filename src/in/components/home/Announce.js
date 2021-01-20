@@ -23,11 +23,11 @@ function Announce(props) {
 	
 	return (
 		<div className="place_Announce">
-			<h1 className="Announce_h1">
+			<div className="Announce_div">
 				<button className="Announce_button" onClick={show_page1}>經費補助</button> 
 				<button className="Announce_button" onClick={show_page2}>社團資訊</button> 
 				<button className="Announce_button" onClick={show_page3}>學生活動管理處</button>
-			</h1>
+			</div>
 			{
 				showPage1? 
 					<WebPage board={props.board0} url={props.url0} name={props.name0}/> 
