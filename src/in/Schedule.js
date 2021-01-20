@@ -29,6 +29,7 @@ function Schedule() {
 
   const handleDateClick = (date) => {
     setInputTask(true);
+    setShowEvent(false);
     setDeadline(date);
   };
 

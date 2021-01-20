@@ -2,11 +2,37 @@ import { useState } from "react";
 import socket from "./../../../socket-io";
 import userID from "./../../../userID";
 
+function getToday() {
+  var today = new Date();
+  var dd = today.getDate();
+
+  var mm = today.getMonth() + 1;
+  var yyyy = today.getFullYear();
+  if (dd < 10) {
+    dd = "0" + dd;
+  }
+
+  if (mm < 10) {
+    mm = "0" + mm;
+  }
+  today = yyyy + "-" + mm + "-" + dd;
+  console.log(today);
+  return today;
+}
+
+const today = getToday();
+
 function GetEvents() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const comp = (a, b) => {
+    if (a.date < today && !(b.date < today)) {
+      return 1;
+    }
+    if (!(a.date < today) && b.date < today) {
+      return -1;
+    } 
     if (a.isImportant === true && b.isImportant === false) {
       return -1;
     }
