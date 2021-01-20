@@ -16,7 +16,7 @@
 }
 
 .create_item__item {
-    position: relative;
+    position: flex;
     width: 100%;
     min-height: 5em;
     display: flex;

@@ -13,13 +13,7 @@ function CreateTask(props) {
     if (title === "") {
       alert("請輸入待辦事項");
       inputPass = false;
-      console.log("FAQ");
     }
-    //   else if (type === 0) {
-    //   alert("請選取類別");
-    //   inputPass = false;
-    //   console.log("FAQ");
-    // }
     if (inputPass) {
       let task = {
         ID: userID,
@@ -54,25 +48,7 @@ function CreateTask(props) {
           <h1 className="create_item-detail">日期</h1>
           <h1 className="create_item-detail">{props.deadline}</h1>
         </li>
-        {/* <li key="2" className="create_item__item">
-          <h1 className="create_item-detail">類別</h1>
-          <label>租借場地</label>
-          <input
-            type="radio"
-            onChange={() => {
-              setType(1);
-            }}
-            checked={type === 1}
-          />
-          <label>其他</label>
-          <input
-            type="radio"
-            onChange={() => {
-              setType(2);
-            }}
-            checked={type === 2}
-          />
-        </li> */}
+
         <li key="3" className="create_item__item">
           <h1 className="create_item-detail">備註</h1>
           <input
@@ -94,7 +70,8 @@ function CreateTask(props) {
             checked={isImportant}
           />
         </li>
-        <button className="create_item_btn" onClick={ClickEnter}>送出</button>
+      </ul>
+      <button className="create_item_btn" onClick={ClickEnter}>送出</button>
         <button
           className="create_item_btn"
           onClick={() => {
@@ -103,7 +80,6 @@ function CreateTask(props) {
         >
           取消
         </button>
-      </ul>
     </div>
   );
 }
