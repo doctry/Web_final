@@ -66,6 +66,8 @@
 }
 
 .WebPage_li {
+    display: flex;
+    flex-direction: row;
     width: 100%;
     height: 6vh;
     border-top: 1px solid #666;
