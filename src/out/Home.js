@@ -4,10 +4,8 @@ import 'antd/dist/antd.css'
 import "./Home.css"
 import { Link, Redirect } from "react-router-dom/cjs/react-router-dom.min"
 
-import { Main_page } from "../in/Pages";
-
 function Home () {
-    const [username, setUsername] = useState('')
+    const [account, setAccount] = useState('')
     const [password, setPassword] = useState('')
     const [login, setLogin] = useState(false)
 
@@ -56,8 +54,8 @@ function Home () {
                 </div>
                 <Input
                     placeholder="社團帳號"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    value={account}
+                    onChange={(e) => setAccount(e.target.value)}
                     style={{ marginBottom: 10 }}
                     onKeyDown={(e) => {
                     if (e.key === 'Enter') {
@@ -73,21 +71,21 @@ function Home () {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="社團密碼"
                     onSearch={(msg) => {
-                        if (!msg || !username) {
+                        if (!msg || !account) {
                             displayStatus({
                                 type: '錯誤',
                                 msg: '請輸入有效的社團帳號與密碼'
                             })
-                            setUsername('')
+                            setAccount('')
                             setPassword('')
                         } else {
                             // TODO:
                             // Handle backend
+                            localStorage.setItem("account", account)
                             setLogin(true)
-
                         }
 
-                        setUsername('')
+                        setAccount('')
                         setPassword('')
                     }}
                 ></Input.Search>
