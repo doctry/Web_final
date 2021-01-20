@@ -4,6 +4,8 @@ connectMongo();
 
 const PORT = 4000;
 
+const {spawn} = require("child_process");
+
 const app = require("express")();
 const server = require("http").createServer(app);
 const options = {
@@ -39,6 +41,18 @@ io.on("connection", (socket) => {
   socket.on("deleteTask", async (ID,_id) => {
     await Task.deleteMany({_id: _id});
     emitResult(ID, "刪除")
+  });
+
+  socket.on("addMember", () => {
+    const childPython = spawn("python", ["./server/reservation/reserve.py"]);
+
+    childPython.stdout.on("data", (data) => {
+        console.log(`stdout: ${data}`)
+    });
+
+    childPython.on("close", (code) => {
+        console.log(`child process exited with code: ${code}`)
+    })
   });
 });
 
