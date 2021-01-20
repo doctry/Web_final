@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom'
 import { Route, Switch, Redirect } from "react-router-dom";
-import { Home_page, Schedule_page, Contact_page, Reservation_page } from "./Pages"
+import { Home_page, Schedule_page, About_page, Reservation_page } from "./Pages"
 import Navbar_in from "./components/Navbar_in"
 import {Board0, url_0} from "./components/home/Board0"
 import {Board1, url_1} from "./components/home/Board1"
@@ -36,7 +36,7 @@ function Main() {
                         )}
                     />
                     <Route path="/in/schedule" component={ Schedule_page }/>
-                    <Route path="/in/contact" component={ Contact_page }/>
+                    <Route path="/in/about" component={ About_page }/>
                     <Route path="/in/reservation" component={ Reservation_page }/>
                 </Switch>
             </BrowserRouter>

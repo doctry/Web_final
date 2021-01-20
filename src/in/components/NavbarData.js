@@ -20,8 +20,8 @@ export const NavbarData = [
     },
 
     {
-        title: "聯絡我們",
-        path: "/in/contact",
+        title: "關於我們",
+        path: "/in/about",
         icon: <AiIcons.AiFillPhone/>,
         cName: "nav-text"
     },

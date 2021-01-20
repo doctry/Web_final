@@ -1,7 +1,7 @@
 import Main from "./Main"
 import Home from "./Home"
 import Schedule from "./Schedule"
-import Contact from "./Contact"
+import About from "./About"
 import Reservation from "./Reservation"
 
 const Main_page = () => {
@@ -20,12 +20,12 @@ const Schedule_page = () => {
     return <Schedule/>
 }
 
-const Contact_page = () => {
-    return <Contact/>
+const About_page = () => {
+    return <About/>
 }
 
 const Reservation_page = () => {
     return <Reservation/>
 }
 
-export { Main_page, Home_page, Schedule_page, Contact_page, Reservation_page };
+export { Main_page, Home_page, Schedule_page, About_page, Reservation_page };

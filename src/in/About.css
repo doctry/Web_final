@@ -1,0 +1,24 @@
+.about-us {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
+    font-size: 48px;
+}
+
+.department {
+    margin-top: 1em;
+    width: 75vw;
+    /* border: solid;
+    border-color: coral; */
+}
+
+.department img {
+    width: auto;
+}
+
+.department p {
+    font-size: .5em;
+    font-style: italic;
+}
