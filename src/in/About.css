@@ -1,6 +1,7 @@
 .about-us {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     width: 100vw;
     min-height: 100vh;
@@ -8,10 +9,7 @@
 }
 
 .department {
-    margin-top: 1em;
     width: 75vw;
-    /* border: solid;
-    border-color: coral; */
 }
 
 .department img {
@@ -22,3 +20,12 @@
     font-size: .5em;
     font-style: italic;
 }
+
+.author {
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    border: solid;
+    border-color: coral;
+}
+
