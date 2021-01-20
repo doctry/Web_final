@@ -54,10 +54,10 @@ function Todolist(props) {
   return (
     <div className="right">
       {props.loading ? (
-        <h1>載入待辦事項...</h1>
+        <h1 className="todo-list-h1">載入待辦事項...</h1>
       ) : (
         <>
-          <h1>{props.events.length ? "待辦事項" : "尚無待辦事項"}</h1>
+          <h1 className="todo-list-h1">{props.events.length ? "待辦事項" : "尚無待辦事項"}</h1>
           <ul className="todo-app__list" id="todo-list">
             {props.events.map((event, i) => {
               return (
