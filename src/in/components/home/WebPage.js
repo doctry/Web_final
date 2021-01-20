@@ -14,7 +14,7 @@ function WebPage(props) {
 						)
 					})}
 				</ul>
-			: 	<h2>載入中...</h2>
+				: 	<h2>載入中...</h2>
 			}
 		</div>
 	);
