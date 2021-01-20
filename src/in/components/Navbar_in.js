@@ -28,9 +28,6 @@ function Navbar_in () {
         <nav className={ sidebar ? "nav-menu active" : "nav-menu"}>
             <ul className="nav-menu-items" onClick={ clickSidebar }>
                 { NavbarData.map((item, index) => {
-                    // if (item.path === '/') {
-                    //     localStorage.setItem('account', "")
-                    // }
                     return (
                         <li key={index} className={ item.cName }>
                             <Link to={ item.path } onClick={ () => {
