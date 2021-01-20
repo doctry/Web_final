@@ -12,6 +12,7 @@ function Calendar(props) {
         initialView="dayGridMonth"
         events={props.events}
         dateClick={(info) => {props.onDateClick(info.dateStr)}}
+        eventClick={(info) => {props.onClickEvent(info.event)}}
       />
     </div>
   );

@@ -35,7 +35,7 @@ io.on("connection", (socket) => {
     emitEvent(ID);
   });
 
-  socket.on("deleteTask", async (ID, _id) => {
+  socket.on("deleteTask", async (_id) => {
     await Task.deleteMany({ _id: _id });
   });
 

@@ -75,7 +75,7 @@ function CreateTask(props) {
           />
         </li>
         <li key="3" className="create_item__item">
-          <h1 className="create_item-detail">敘述</h1>
+          <h1 className="create_item-detail">備註</h1>
           <input
             type="text"
             onChange={(e) => {

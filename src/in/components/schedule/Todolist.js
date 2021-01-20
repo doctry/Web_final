@@ -7,7 +7,7 @@ import userID from "./../../../userID";
 function TodoItem(props) {
   const onXClick = () => {
     props.deleteTask(props.id);
-    socket.emit("deleteTask", userID, props._id);
+    socket.emit("deleteTask", props._id);
   };
 
   return (
