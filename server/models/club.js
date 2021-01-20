@@ -3,10 +3,6 @@ const Schema = mongoose.Schema
 
 // Creating a schema, sort of like working with an ORM
 const ClubSchema = new Schema({
-	ID: {
-		type: String,
-		required: [true, '\'ID\' field is required.']
-	},
 	clubname: {
 		type: String,
 		required: [true, '\'title\' field is required.']
@@ -25,4 +21,4 @@ const ClubSchema = new Schema({
 const Club = mongoose.model('register', ClubSchema)
 
 // Exporting table for querying and mutating
-module.exports = Task
+module.exports = Club

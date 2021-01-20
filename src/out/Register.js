@@ -1,9 +1,8 @@
 import React from "react"
-import { Form, Input, Button, Space, Select } from 'antd';
+import { Form, Input, Button } from 'antd';
 import 'antd/dist/antd.css'
 import "./Register.css"
-
-const { Option } = Select;
+import socket from "../socket-io";
 
 const layout = {
   labelCol: {
@@ -14,28 +13,17 @@ const layout = {
   },
 };
 
-// const validateMessages = {
-//   required: '${label} is required!',
-//   types: {
-//     email: '${label} is not a valid email!',
-//     number: '${label} is not a valid number!',
-//   },
-//   number: {
-//     range: '${label} must be between ${min} and ${max}',
-//   },
-// };
-
-
 function Register() {
     const [form] = Form.useForm();
     
     const onFinish = values => {
-        console.log('Received values of form:', values);
-      };
-    
-    const handleChange = () => {
-        form.setFieldsValue({ sights: [] });
-      };
+        console.log('Received values of form:', values)
+        // socket.emit("addClubAccount", values.clubname, values.account, values.password)
+
+        socket.on("returnClubAccount", (result) => {
+          // console.log(result)
+        })
+    };
 
     return(
     <div>
@@ -56,7 +44,23 @@ function Register() {
                 name="clubname"
                 label="社團"
                 rules={[ 
-                  { required: true } 
+                  { required: true },
+                  () => ({
+                    validator(_, clubname) {
+                      // let aa = false;
+                      // socket.emit("checkClubName", clubname)
+                      // socket.on("returnCheckClubName", (result) => {
+                      //     console.log(result)
+                      //     aa = result
+                      // })
+
+                      // console.log(aa)
+                      // // if (!value || getFieldValue('password') === value) {
+                      // return Promise.resolve();
+                      // }
+                      // return Promise.reject('需與密碼一致!');
+                    },
+                  })
                 ]}
               > 
                 <Input/>

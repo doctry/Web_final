@@ -25,5 +25,6 @@ function connectMongo() {
 
 const Task = require('./models/task')
 const Weblink = require('./models/weblink')
+const Club = require('./models/club')
 
-export {connectMongo, Task, Weblink}
+export {connectMongo, Task, Weblink, Club}

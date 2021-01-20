@@ -1,4 +1,5 @@
-import { connectMongo, Task, Weblink } from "./db";
+import { connectMongo, Task, Weblink, Club } from "./db";
+// import Club from "./models/club";
 
 connectMongo();
 
@@ -75,6 +76,36 @@ io.on("connection", (socket) => {
       console.log(`child process exited with code: ${code}`);
     });
   });
+
+    // club
+    async function checkClubAccount(validateString, qurey) {
+        const ret = await Club.find(qurey)
+        const isAccount = false
+        if (ret.length >= 1) {
+            isAccount = true
+        } 
+
+        socket.emit(validateString, isAccount)
+    }
+
+    socket.on("validateClubLogin", (account, password) => {
+        checkClubAccount("returnClubLogin",
+            { account: account, password: password });
+    });
+
+    socket.on("checkClubName", (clubname) => {
+        checkClubAccount("returnCheckClubName",
+            { clubname: clubname })
+    });
+    
+    socket.on("checkClubAccount", (account) => {
+      checkClubAccount("returnCheckClubAccount",
+          { account: account });
+  });
+
+    socket.on("addClubAccount", (clubname, account, password) => {
+        Club.insertMany({ clubname: clubname, account: account, password: password });
+    });
 });
 
 server.listen(PORT, () => {
