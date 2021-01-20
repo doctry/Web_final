@@ -27,7 +27,6 @@ io.on("connection", (socket) => {
   }
 
   socket.on("addTask", async (ID, task) => {
-    console.log(task);
     await Task.insertMany(task);
     emitEvent(ID);
   });
@@ -45,19 +44,16 @@ io.on("connection", (socket) => {
 
   async function emitWeblink(ID) {
     const ret = await Weblink.find({ ID: ID });
-    console.log(ret);
     socket.emit("weblinks", ID, ret);
   }
 
   socket.on("addWeblink", async (ID, weblink) => {
-    console.log(weblink);
     await Weblink.insertMany(weblink);
     emitWeblink(ID);
   });
 
   socket.on("queryWeblinks", (ID) => {
     emitWeblink(ID);
-    console.log("queryWeblinks");
   });
 
   socket.on("deleteWeblink", async (_id) => {

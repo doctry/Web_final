@@ -15,10 +15,6 @@ const TaskSchema = new Schema({
     type: String,
     required: [true, "'deadline' field is required."],
   },
-  type: {
-    type: String,
-    required: [true, "'type' field is required."],
-  },
   description: {
     type: String,
     required: [true, "'description' field is required."],
