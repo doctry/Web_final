@@ -1,5 +1,6 @@
-import React from "react"
-import { Form, Input, Button } from 'antd';
+import React, { useState } from "react"
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min"
+import { Form, Input, Button, message } from 'antd';
 import 'antd/dist/antd.css'
 import "./Register.css"
 import socket from "../socket-io";
@@ -13,16 +14,41 @@ const layout = {
   },
 };
 
+const displayRegisterSuccess = () => {
+    const content = {
+      content: "註冊成功！",
+      duration: 1
+    }
+
+    message.success(content)
+    window.location = "/"
+}
+
 function Register() {
     const [form] = Form.useForm();
+    const [clubnameExists, setClubnameExists] = useState(false)
+    const [clubaccountExists, setClubaccountExists] = useState(false)
+
+    socket.on("returnCheckClubName", (result) => {
+        if (result) {
+            setClubnameExists(true)
+        } else {
+            setClubnameExists(false)
+        }
+    })
+
+    socket.on("returnCheckClubAccount", (result) => {
+        if (result) {
+            setClubaccountExists(true)
+        } else {
+            setClubaccountExists(false)
+        }
+    })
     
     const onFinish = values => {
-        console.log('Received values of form:', values)
-        // socket.emit("addClubAccount", values.clubname, values.account, values.password)
-
-        socket.on("returnClubAccount", (result) => {
-          // console.log(result)
-        })
+        // console.log('Received values of form:', values)
+        socket.emit("addClubAccount", values.clubname, values.account, values.password)
+        displayRegisterSuccess()
     };
 
     return(
@@ -47,18 +73,12 @@ function Register() {
                   { required: true },
                   () => ({
                     validator(_, clubname) {
-                      // let aa = false;
-                      // socket.emit("checkClubName", clubname)
-                      // socket.on("returnCheckClubName", (result) => {
-                      //     console.log(result)
-                      //     aa = result
-                      // })
+                      socket.emit("checkClubName", clubname)
+                      if (clubnameExists) {
+                          return Promise.reject('社團名稱已註冊！');
+                      }
 
-                      // console.log(aa)
-                      // // if (!value || getFieldValue('password') === value) {
-                      // return Promise.resolve();
-                      // }
-                      // return Promise.reject('需與密碼一致!');
+                      return Promise.resolve();
                     },
                   })
                 ]}
@@ -70,7 +90,17 @@ function Register() {
                 name="account"
                 label="帳號"
                 rules={[ 
-                  { required: true } 
+                  { required: true },
+                  () => ({
+                    validator(_, account) {
+                      socket.emit("checkClubAccount", account)
+                      if (clubaccountExists) {
+                          return Promise.reject('該帳號已被使用！');
+                      }
+
+                      return Promise.resolve();
+                    },
+                  })
                 ]}
               > 
                 <Input/>

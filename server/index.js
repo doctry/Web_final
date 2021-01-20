@@ -80,7 +80,7 @@ io.on("connection", (socket) => {
     // club
     async function checkClubAccount(validateString, qurey) {
         const ret = await Club.find(qurey)
-        const isAccount = false
+        let isAccount = false
         if (ret.length >= 1) {
             isAccount = true
         } 
@@ -94,6 +94,7 @@ io.on("connection", (socket) => {
     });
 
     socket.on("checkClubName", (clubname) => {
+        console.log(clubname)
         checkClubAccount("returnCheckClubName",
             { clubname: clubname })
     });
