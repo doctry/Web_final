@@ -3,6 +3,7 @@ import socket from "./../socket-io";
 
 function Reservation() {
     const click_button = () => {
+        socket.emit("addMember");
         console.log("增加成員")
     }
 

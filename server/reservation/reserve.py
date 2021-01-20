@@ -14,7 +14,10 @@ load_dotenv()
 account = os.getenv("account")
 password = os.getenv("password")
 
-datas = pd.read_excel("members.xlsx", engine="openpyxl").values
+print(account)
+print(password)
+
+datas = pd.read_excel("./server/reservation/members.xlsx", engine="openpyxl").values
 
 new_member_ID = []
 new_member_position = []
@@ -31,7 +34,7 @@ for data in datas:
 # connection
 options = Options()
 # options.add_argument("headless")
-driver = webdriver.Chrome('./chromedriver', chrome_options=options)  # Optional argument, if not specified will search path.
+driver = webdriver.Chrome('./server/reservation/chromedriver', chrome_options=options)  # Optional argument, if not specified will search path.
 driver.get(url_signin)
 try:
 	time.sleep(3) # Let the user actually see something!
