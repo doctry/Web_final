@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100vw;
     min-height: 100vh;
     font-size: 48px;
@@ -10,6 +10,7 @@
 
 .department {
     width: 75vw;
+    margin-top: 1em;
 }
 
 .department img {
@@ -17,15 +18,27 @@
 }
 
 .department p {
-    font-size: .5em;
+    font-size: .7em;
     font-style: italic;
 }
 
-.author {
+.author-list {
     width: 90vw;
+    min-height: 50vh;
     display: flex;
+    align-items: center;
     justify-content: center;
-    border: solid;
-    border-color: coral;
+    margin-top: 3em;
+
+    background-image: url("./components/img/Author_background.jpg");
+    /* border: solid;
+    border-color: coral; */
 }
 
+.author {
+    border: solid;
+}
+
+.author h1 {
+    font-size: .5em;
+}

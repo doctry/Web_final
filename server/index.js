@@ -33,6 +33,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("queryEvents", (ID) => {
+    // usage: socket.emit("queryEvents", ID)
     emitEvent(ID);
   });
 
