@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import X from "./img/x.png";
 import "./Schedule.css";
-import socket from "./../../../socket-io";
-import userID from "./../../../userID";
 
 function TodoItem(props) {
   const onXClick = () => {
-    props.deleteTask(props.id);
-    socket.emit("deleteTask", props._id);
+    props.deleteTask(props.id, props._id);
   };
 
   return (

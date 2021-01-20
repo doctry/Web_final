@@ -1,7 +1,6 @@
 import { getElementError } from "@testing-library/react";
 import React, { useState } from "react";
 import "./CreateTask.css";
-import socket from "./../../../socket-io";
 import userID from "./../../../userID";
 
 function CreateTask(props) {

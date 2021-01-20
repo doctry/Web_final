@@ -22,9 +22,10 @@ function GetEvents() {
     return 0;
   }
 
-  const deleteTask = (idx) => {
-    let temp = events.splice(idx, 1);
+  const deleteTask = (idx,_id) => {
+    let temp = events.filter((w,i) => i !== idx);
     setEvents(temp);
+    socket.emit("deleteTask", _id);
   }
 
   const addTask = (task) => {

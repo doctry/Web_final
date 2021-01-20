@@ -1,4 +1,4 @@
-import { connectMongo, Task } from "./db";
+import { connectMongo, Task, Weblink } from "./db";
 
 connectMongo();
 
@@ -18,12 +18,13 @@ const io = require("socket.io")(server, options);
 
 // This part is for server behavior
 io.on("connection", (socket) => {
+  console.log("a user connectted");
+
+  // task
   async function emitEvent(ID) {
     const ret = await Task.find({ ID: ID }).sort({ date: 1 });
     socket.emit("events", ID, ret);
   }
-
-  console.log("a user connectted");
 
   socket.on("addTask", async (ID, task) => {
     console.log(task);
@@ -37,6 +38,27 @@ io.on("connection", (socket) => {
 
   socket.on("deleteTask", async (_id) => {
     await Task.deleteMany({ _id: _id });
+  });
+
+  // weblink
+
+  async function emitWeblink(ID) {
+    const ret = await Weblink.find({ ID: ID });
+    socket.emit("weblinks", ID, ret);
+  }
+
+  socket.on("addWeblink", async (ID, weblink) => {
+    console.log(weblink);
+    await Weblink.insertMany(weblink);
+    emitWeblink(ID);
+  });
+
+  socket.on("queryWeblinks", (ID) => {
+    emitWeblink(ID);
+  });
+
+  socket.on("deleteWeblink", async (_id) => {
+    await Weblink.deleteMany({ _id: _id });
   });
 
   socket.on("addMember", () => {

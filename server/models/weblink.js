@@ -18,7 +18,7 @@ const WeblinkSchema = new Schema({
 });
 
 // Creating a table within database with the defined schema
-const Weblink = mongoose.model("message", WeblinkSchema);
+const Weblink = mongoose.model("weblink", WeblinkSchema);
 
 // Exporting table for querying and mutating
 module.exports = Weblink;
