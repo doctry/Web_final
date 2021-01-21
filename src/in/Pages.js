@@ -4,11 +4,11 @@ import Schedule from "./Schedule"
 import About from "./About"
 import Reservation from "./Reservation"
 
-const Main_page = () => {
+const MainPage = () => {
     return <Main/>;
 }
 
-const Home_page = (props) => {
+const HomePage = (props) => {
     return <Home 
                 board0={props.board0} url0={props.url0} name0={props.name0}
                 board1={props.board1} url1={props.url1} name1={props.name1}
@@ -16,16 +16,16 @@ const Home_page = (props) => {
             />
 }
 
-const Schedule_page = () => {
+const SchedulePage = () => {
     return <Schedule/>
 }
 
-const About_page = () => {
+const AboutPage = () => {
     return <About/>
 }
 
-const Reservation_page = () => {
+const ReservationPage = () => {
     return <Reservation/>
 }
 
-export { Main_page, Home_page, Schedule_page, About_page, Reservation_page };
+export { MainPage, HomePage, SchedulePage, AboutPage, ReservationPage };

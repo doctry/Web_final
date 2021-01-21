@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react"
 import { Input, Button, message } from 'antd'
-import { BiLogInCircle } from "react-icons/bi";
 import 'antd/dist/antd.css'
 import "./Login.css"
 import { Link, Redirect } from "react-router-dom/cjs/react-router-dom.min"

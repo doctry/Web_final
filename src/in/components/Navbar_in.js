@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link, Redirect } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./Navbar_in.css"
 import { NavbarData } from "./NavbarData"
 import * as FaIcons from "react-icons/fa"

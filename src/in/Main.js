@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom'
-import { Route, Switch, Redirect } from "react-router-dom";
-import { Home_page, Schedule_page, About_page, Reservation_page } from "./Pages"
-import Navbar_in from "./components/Navbar_in"
+import { Route, Switch } from "react-router-dom";
+import { HomePage, SchedulePage, AboutPage, ReservationPage } from "./Pages"
+import NavbarIn from "./components/Navbar_in"
 import {Board0, url_0} from "./components/home/Board0"
 import {Board1, url_1} from "./components/home/Board1"
 import {Board2, url_2} from "./components/home/Board2"
@@ -23,21 +23,21 @@ function Main() {
     return (
         <div>
             <BrowserRouter>
-                <Navbar_in/>
+                <NavbarIn/>
                 <Switch>
                     <Route 
                         exact path="/in"
                         render={props => (
-                            <Home_page {...props} 
+                            <HomePage {...props} 
                                 board0={board0} url0={url_0} name0={"臺大社團經費補助"}
                                 board1={board1} url1={url_1} name1={"臺大社團資訊"}
                                 board2={board2} url2={url_2} name2={"臺大學生活動管理處"}
                             />
                         )}
                     />
-                    <Route path="/in/schedule" component={ Schedule_page }/>
-                    <Route path="/in/about" component={ About_page }/>
-                    <Route path="/in/reservation" component={ Reservation_page }/>
+                    <Route path="/in/schedule" component={ SchedulePage }/>
+                    <Route path="/in/about" component={ AboutPage }/>
+                    <Route path="/in/reservation" component={ ReservationPage }/>
                 </Switch>
             </BrowserRouter>
         </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col } from "antd"
+import { Col } from "antd"
 import "./About.css"
 import department from "./components/img/about_us.png"
 

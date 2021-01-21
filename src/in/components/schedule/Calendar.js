@@ -8,11 +8,21 @@ function Calendar(props) {
   return (
     <div className="calendar">
       <FullCalendar
-        plugins={[ dayGridPlugin, interactionPlugin ]}
+        plugins={[dayGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
         events={props.events}
-        dateClick={(info) => {props.onDateClick(info.dateStr)}}
-        eventClick={(info) => {props.onClickEvent(info.event)}}
+        dateClick={(info) => {
+          props.onDateClick(info.dateStr);
+        }}
+        eventClick={(info) => {
+          const temp = {
+            title: info.event.title,
+            date: info.event.startStr,
+            description: info.event.extendedProps.description,
+            isImportant: info.event.extendedProps.isImportant,
+          };
+          props.onClickEvent(temp);
+        }}
       />
     </div>
   );

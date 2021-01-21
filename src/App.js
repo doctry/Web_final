@@ -3,7 +3,7 @@ import React from "react"
 import { BrowserRouter } from 'react-router-dom'
 import { Route, Switch, Redirect } from "react-router-dom";
 
-import { Main_page } from "./in/Pages"
+import { MainPage } from "./in/Pages"
 import { Login_page, Register_page } from "./out/pages";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -24,7 +24,7 @@ function App() {
         <Switch> 
           <Route exact path="/" component={ Login_page }/>
           <Route path="/register" component={ Register_page }/>
-          <PrivateRoute path="/in" component={ Main_page }/>
+          <PrivateRoute path="/in" component={ MainPage }/>
         </Switch>
       </BrowserRouter>
     </div>
