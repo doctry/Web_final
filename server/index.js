@@ -8,11 +8,7 @@ const PORT = process.ENV.port;
 const { spawn } = require("child_process");
 
 const app = require("express")();
-const { wakeDyno } = require('heroku-keep-awake');
-const DYNO_URL = "";
-app.listen(PORT, ()=>{
-  wakeDyno(DYNO_URL);
-})
+
 const server = require("http").createServer(app);
 const options = {
   /* ... */
