@@ -15,10 +15,9 @@ function Calendar(props) {
           props.onDateClick(info.dateStr);
         }}
         eventClick={(info) => {
-          console.log(info.event);
           const temp = {
             title: info.event.title,
-            date: info.dateStr,
+            date: info.event.startStr,
             description: info.event.extendedProps.description,
             isImportant: info.event.extendedProps.isImportant,
           };
