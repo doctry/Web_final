@@ -72,14 +72,14 @@ function CreateTask(props) {
         </li>
       </ul>
       <button className="create_item_btn" onClick={ClickEnter}>送出</button>
-        <button
-          className="create_item_btn"
-          onClick={() => {
-            props.onFinish();
-          }}
-        >
-          取消
-        </button>
+      <button
+        className="create_item_btn"
+        onClick={() => {
+          props.onFinish();
+        }}
+      >
+        取消
+      </button>
     </div>
   );
 }

@@ -29,7 +29,7 @@ function TodoItem(props) {
 
   return (
     <li key={props.id} className="todo-app__item">
-      <p className="todo-app__item-detail">{props.event.date}</p>
+      <p className="todo-app__item-date">{props.event.date}</p>
       <p
         className="todo-app__item-detail"
         style={

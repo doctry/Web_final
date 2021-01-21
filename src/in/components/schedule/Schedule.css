@@ -5,8 +5,6 @@
 }
 
 .right {
-    position: relative;
-    z-index: -1;
     width: 25vw;
     margin-right: 5vw;
     float: right;
@@ -36,6 +34,19 @@
     border: 1px solid rgba(0, 0, 0, 0.089);
 }
 
+.todo-app__item-date {
+    font-size: 1.5em;
+    font-weight: 550;
+    overflow-wrap: break-word;
+    transition: opacity 0.3s;
+    height: 100%;
+    margin-bottom: 0vh;
+    margin-left: 1vw;
+    text-align: left;
+    width: 30%;
+    float: left;
+}
+
 .todo-app__item-detail {
     font-size: 1.5em;
     font-weight: 550;
@@ -44,27 +55,27 @@
     height: 100%;
     margin-bottom: 0vh;
     margin-left: 1vw;
-    margin-right: 1.6vw;
+    text-align: left;
+    width: 45%;
+    float: left;
 }
 
 .todo-app__item-x {
-    float: right;
-    
-    max-width: 2vw;
-    max-height: 2vh;
-    margin-right: 2vw;
+    display: none;
 }
 
 .todo-app__item:hover .todo-app__item-x {
     display: inline;
-    position: absolute;
+    float: right;
+    position: relative;
     max-width: 2vw;
     max-height: 2vh;
-    right: 20px;
+    margin-right: 2vw;
+    margin-left: 1vw;
 }
 
 .todo-app__item:hover .todo-app__item-x:hover {
     max-width: 3vw;
     max-height: 3vh;
-    right: 17.5px;
+    margin-right: 1vw;
 }
