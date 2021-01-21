@@ -2,7 +2,7 @@
   "name": "final",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://doctry.github.io/Web_final/build",
+  "homepage": "https://doctry.github.io/Web_final/",
   "dependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
