@@ -1,10 +1,12 @@
 # [109-1] Web Programming Final 
 ## (Group 27) 社團活動資訊系統
-[Github Repo]()
+[Github Repo](https://github.com/doctry/Web_final)
 
-[Demo Video]()
+[Demo Video](https://www.youtube.com/watch?fbclid=IwAR1Xb1IHPFpzM7Bwbd5vmROpfncHv75nVG-97sIV3Z66UHg3MW9Wf8vkSOw&v=LqP9xzNau4Q&feature=youtu.be)
 
-[Deploy]()
+[Deploy](https://doctry.github.io/Web_final/?fbclid=IwAR23LOSRCaqGe_JbPxJk_qTi99ExhAFB9dA7zZXZj-vjDcTxXiePlf1GDug#/)
+
+[FB推文](https://www.facebook.com/groups/NTURicWebProg/permalink/1316844678663449/)
 
 ## 成員
 B06901086 電機四 吳建翰 (組長)
