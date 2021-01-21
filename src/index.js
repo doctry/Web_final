@@ -17,6 +17,8 @@ app.listen(PORT, () => {
     wakeDyno(DYNO_URL); // Use this function when only needing to wake a single Heroku app.
 })
 
+console.log("frontend on");
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
