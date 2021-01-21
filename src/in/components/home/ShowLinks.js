@@ -8,7 +8,7 @@ function ShowLints(props) {
         {props.linkboard.map((item, index) => {
           return (
             <li key={index} className="Weblink_li">
-              <a href={item.url} target="_blank" className="Weblink_a">
+              <a href={item.url} target="_blank" rel="noreferrer" className="Weblink_a">
                 {item.title}
               </a>
               <img

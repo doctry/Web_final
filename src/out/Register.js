@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min"
 import { Form, Input, Button, message } from 'antd';
 import 'antd/dist/antd.css'
 import "./Register.css"
@@ -25,7 +24,6 @@ const displayRegisterSuccess = () => {
 }
 
 function Register() {
-    const [form] = Form.useForm();
     const [clubnameExists, setClubnameExists] = useState(false)
     const [clubaccountExists, setClubaccountExists] = useState(false)
 

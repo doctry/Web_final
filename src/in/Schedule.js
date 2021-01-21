@@ -21,6 +21,7 @@ function Schedule() {
   const onClickEvent = (ev) => {
     setEvent(ev);
     setShowEvent(true);
+    setInputTask(false);
   };
 
   const stopShowEvent = () => {
@@ -42,7 +43,7 @@ function Schedule() {
       socket.emit("queryEvents", userID);
       setInit(false);
     }
-  },[init]);
+  }, [init]);
 
   useEffect(() => {
     if (events) {
@@ -80,9 +81,7 @@ function Schedule() {
         <Todolist
           events={display}
           loading={loading}
-          deleteTask={() => {
-            deleteTask();
-          }}
+          deleteTask={deleteTask}
         />
       )}
     </>

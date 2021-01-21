@@ -17,13 +17,14 @@ function getToday() {
   }
   today = yyyy + "-" + mm + "-" + dd;
   return today;
-  console.log(today);
 }
 
 const today = getToday();
 
 function TodoItem(props) {
   const onXClick = () => {
+    console.log("onXClick");
+    console.log(props.deleteTask);
     props.deleteTask(props.id, props._id);
   };
 
@@ -33,7 +34,11 @@ function TodoItem(props) {
       <p
         className="todo-app__item-detail"
         style={
-          props.event.date < today ? { textDecoration: "line-through" } : {}
+          props.event.date < today
+            ? { textDecoration: "line-through" }
+            : props.event.isImportant
+            ? { color: "red", fontWeight: "750" }
+            : {}
         }
       >
         {props.event.title}
@@ -57,18 +62,18 @@ function Todolist(props) {
         <h1 className="todo-list-h1">載入待辦事項...</h1>
       ) : (
         <>
-          <h1 className="todo-list-h1">{props.events.length ? "待辦事項" : "尚無待辦事項"}</h1>
+          <h1 className="todo-list-h1">
+            {props.events.length ? "待辦事項" : "尚無待辦事項"}
+          </h1>
           <ul className="todo-app__list" id="todo-list">
             {props.events.map((event, i) => {
               return (
                 <TodoItem
                   event={event}
                   key={i.toString()}
-                  id={i.toString()}
+                  id={i}
                   _id={event._id}
-                  deleteTask={() => {
-                    props.deleteTask();
-                  }}
+                  deleteTask={props.deleteTask}
                 />
               );
             })}

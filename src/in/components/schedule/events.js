@@ -16,7 +16,6 @@ function getToday() {
     mm = "0" + mm;
   }
   today = yyyy + "-" + mm + "-" + dd;
-  console.log(today);
   return today;
 }
 
@@ -55,7 +54,6 @@ function GetEvents() {
   }
 
   const addTask = (task) => {
-    console.log(task);
     socket.emit('addTask', userID, task);
     setLoading(true);
   }
@@ -63,7 +61,6 @@ function GetEvents() {
   socket.on("events", (ID, es) => {
     if (ID === userID) {
       if (es) {
-        console.log('events');
         let temp = es;
         temp.sort(comp);
         setEvents(temp);

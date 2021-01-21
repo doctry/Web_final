@@ -21,7 +21,6 @@ function GetWeblinks() {
   socket.on("weblinks", (ID, es) => {
     if (ID === userID) {
       if (es) {
-        console.log("weblinks");
         setWeblinks(es);
         setLoading(false);
       }
