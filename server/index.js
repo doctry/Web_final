@@ -3,7 +3,7 @@ import { connectMongo, Task, Weblink, Club } from "./db";
 
 connectMongo();
 
-const PORT = 4000;
+const PORT = process.ENV.port;
 
 const { spawn } = require("child_process");
 
