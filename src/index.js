@@ -8,8 +8,8 @@ const express = require('express');
 const { wakeDyno} = require('heroku-keep-awake');
 
 
-const PORT = process.env.PORT;
-const DYNO_URL = 'https://my-app.herokuapp.com';
+const PORT = 9117;
+const DYNO_URL = 'https://web-final-server.herokuapp.com';
 
 const app = express();
 
