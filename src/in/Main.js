@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import { Route, Switch } from "react-router-dom";
 import { HomePage, SchedulePage, AboutPage, ReservationPage } from "./Pages"
 import NavbarIn from "./components/Navbar_in"
@@ -22,7 +22,7 @@ function Main() {
     
     return (
         <div>
-            <BrowserRouter>
+            <HashRouter>
                 <NavbarIn/>
                 <Switch>
                     <Route 
@@ -39,7 +39,7 @@ function Main() {
                     <Route path="/in/about" component={ AboutPage }/>
                     <Route path="/in/reservation" component={ ReservationPage }/>
                 </Switch>
-            </BrowserRouter>
+            </HashRouter>
         </div>
     );
 }

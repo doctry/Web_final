@@ -1,6 +1,6 @@
 import './App.css';
 import React from "react"
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import { Route, Switch, Redirect } from "react-router-dom";
 
 import { MainPage } from "./in/Pages"
@@ -20,13 +20,13 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Switch> 
           <Route exact path="/" component={ Login_page }/>
           <Route path="/register" component={ Register_page }/>
           <PrivateRoute path="/in" component={ MainPage }/>
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
