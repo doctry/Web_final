@@ -108,6 +108,10 @@ io.on("connection", (socket) => {
     socket.on("addClubAccount", (clubname, account, password) => {
         Club.insertMany({ clubname: clubname, account: account, password: password });
     });
+
+    socket.on("ping", (data) => {
+        console.log(data)
+    }) 
 });
 
 server.listen(PORT, () => {
