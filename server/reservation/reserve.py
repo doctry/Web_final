@@ -1,7 +1,10 @@
 import os 
+
+os.system("pip install -r ./server/reservation/requirements.txt")
+
 import time
 import pandas as pd
-import openpyxl
+# import openpyxl
 from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -17,7 +20,7 @@ password = os.getenv("password")
 print("account: %s" % account)
 print("password: %s" % password)
 
-datas = pd.read_excel("./server/reservation/members.xlsx", engine="openpyxl").values
+datas = pd.read_excel("./server/reservation/members.xlsx").values
 
 new_member_ID = []
 new_member_position = []
