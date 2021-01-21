@@ -4,6 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const express = require('express');
+const { wakeDyno} = require('heroku-keep-awake');
+
+
+const PORT = process.env.PORT;
+const DYNO_URL = 'https://my-app.herokuapp.com';
+
+const app = express();
+
+app.listen(PORT, () => {
+    wakeDyno(DYNO_URL); // Use this function when only needing to wake a single Heroku app.
+})
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
